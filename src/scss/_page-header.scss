@@ -1,0 +1,119 @@
+.page-header {
+    position: absolute;
+    left: 0;
+    top: 5.2rem;
+    width: 100%;
+    color: white;
+    z-index: 200;
+}
+
+.page-header__row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.page-header__logo-link {
+    margin-right: 6.2rem;
+    &:link,
+    &:visited {
+        color: white;
+    }
+}
+
+.page-header__logo {
+    display: block;
+    width: 17.2rem;
+    height: auto;
+}
+
+.page-header__nav {
+    margin-right: auto;
+}
+
+.page-header__nav-list {
+    display: flex;
+    align-items: center;
+}
+
+.page-header__nav-list-item {
+    margin-right: 5rem;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.page-header__nav-link {
+    font-family: var(--helios);
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color .2s;
+    &:link, 
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__contacts {
+    display: flex;
+    align-items: flex-start;
+    margin-right: 4.4rem;
+}
+
+.page-header__contacts-content {
+    margin-right: 4.2rem;
+}
+
+.page-header__contacts-phone {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: inline-block;
+
+    transition: color .2s;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-header__work-time {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    font-family: var(--helios);
+}
+
+
+.page-header__write-us {
+    width: 6.2rem;
+    height: 6.2rem;
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+    top: -1rem;
+    svg {
+        fill: white;
+        width: 2.2rem;
+        height: 2.2rem;
+        flex-shrink: 0;
+    }
+}

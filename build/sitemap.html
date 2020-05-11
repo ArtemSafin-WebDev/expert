@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script>
+            window.MSInputMethodContext && document.documentMode && document.write('<script src="assets/js/ie11CustomProperties.js"><\x2fscript>');
+        </script>
+        <link rel="stylesheet" href="css/styles.min.css" />
+        <title>
+            Sitemap
+        </title>
+    </head>
+    <body class="no-touch" ontouchstart="">
+        <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+            <?xml version="1.0" encoding="utf-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <symbol id="bubble" viewBox="0 0 23.25 21.23" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <style>
+                            .acls-1 {
+                                fill-rule: evenodd;
+                            }
+                        </style>
+                    </defs>
+                    <path
+                        d="M19.8 2.7c4.6 3.66 4.6 9.73 0 13.4a13.32 13.32 0 01-9.09 2.67 21.16 21.16 0 01-7.9 2.45.65.65 0 01-.57-1 17 17 0 001.91-3.62 9.92 9.92 0 01-2.92-3C-1.13 9.8.07 5.41 3.47 2.7a13.7 13.7 0 0116.33 0zm-.79 1a12.44 12.44 0 00-14.75 0C1.39 6 .31 9.68 2.31 12.91a9.09 9.09 0 002.95 2.86.66.66 0 01.28.77 17.14 17.14 0 01-1.49 3.19 20.21 20.21 0 006.2-2.19.6.6 0 01.37-.09A12.13 12.13 0 0019 15.07c3.94-3.14 3.94-8.21 0-11.34z"
+                    />
+                    <path class="acls-1" d="M7.63 8.28A1.12 1.12 0 116.52 9.4a1.11 1.11 0 011.11-1.12zM11.63 8.28a1.12 1.12 0 11-1.1 1.12 1.11 1.11 0 011.1-1.12zM15.64 8.28a1.12 1.12 0 11-1.1 1.12 1.11 1.11 0 011.1-1.12z" />
+                </symbol>
+            </svg>
+        </div>
+
+        <div class="page-content">
+            <header class="page-header">
+                <div class="container">
+                    <div class="page-header__row">
+                        <a href="index.html" class="page-header__logo-link">
+                            <img src="img/logo.svg" alt="" class="page-header__logo" width="172" />
+                        </a>
+
+                        <nav class="page-header__nav">
+                            <ul class="page-header__nav-list">
+                                <li class="page-header__nav-list-item">
+                                    <a href="#" class="page-header__nav-link">
+                                        СРО cтроителей
+                                    </a>
+                                </li>
+                                <li class="page-header__nav-list-item">
+                                    <a href="#" class="page-header__nav-link">
+                                        СРО проектировщиков
+                                    </a>
+                                </li>
+                                <li class="page-header__nav-list-item">
+                                    <a href="#" class="page-header__nav-link">
+                                        СРО изыскателей
+                                    </a>
+                                </li>
+                                <li class="page-header__nav-list-item">
+                                    <a href="#" class="page-header__nav-link">
+                                        Специалисты для HPС
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                        <div class="page-header__contacts">
+                            <div class="page-header__contacts-content">
+                                <a href="tel:+78432266900" class="page-header__contacts-phone">8 843 226-69-00</a>
+                                <div class="page-header__work-time">
+                                    Пн-пт, 8:30–18:00 МСК
+                                </div>
+                            </div>
+                            <a href="#" class="page-header__write-us">
+                                <svg width="22" height="22" aria-hidden="true" class="icon-bubble">
+                                    <use xlink:href="#bubble" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="page-main">
+                <style>
+                    .filelist {
+                        max-width: 600px;
+                        margin-top: 50px;
+                    }
+                    .filelist__item {
+                        margin-bottom: 20px;
+                    }
+
+                    .filelist__link:link,
+                    .filelist__link:visited {
+                        display: block;
+                        color: white;
+                        background-color: yellowgreen;
+                        padding: 20px;
+                    }
+                </style>
+
+                <div id="sitemap"></div>
+
+                <script>
+                    (async () => {
+                        const sitemap = document.querySelector('#sitemap');
+                        const filelist = await fetch('filelist.json');
+
+                        if (!filelist.ok) {
+                            sitemap.textContent = 'Error happened';
+                            sitemap.style.color = 'red';
+                            return;
+                        }
+                        let filelistParsed = await filelist.json();
+
+                        filelistParsed = filelistParsed.filter(element => element !== 'sitemap.html');
+
+                        const ul = document.createElement('ul');
+                        ul.className = 'filelist';
+
+                        filelistParsed.forEach(item => {
+                            const filelistItem = document.createElement('li');
+                            filelistItem.className = 'filelist__item';
+                            const filelistLink = document.createElement('a');
+                            filelistLink.className = 'filelist__link';
+                            filelistLink.href = item;
+                            filelistLink.textContent = item;
+                            filelistLink.target = '_blank';
+                            filelistItem.appendChild(filelistLink);
+                            ul.appendChild(filelistItem);
+                        });
+
+                        sitemap.appendChild(ul);
+                    })();
+                </script>
+            </main>
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="page-footer__row"></div>
+                </div>
+            </footer>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="js/app.js"></script>
+        </div>
+    </body>
+</html>
