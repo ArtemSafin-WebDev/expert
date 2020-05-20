@@ -1,0 +1,78 @@
+.about-company {
+    position: relative;
+    z-index: 2;
+}
+
+.about-company__content {
+    background-color: #f2f4fa;
+    color: var(--text-color);
+    padding-top: 8rem;
+    padding-bottom: 15rem;
+}
+
+.about-company__row {
+    display: flex;
+}
+
+.about-company__left-col {
+    width: 32.6rem;
+    flex-shrink: 0;
+    margin-right: 8.2rem;
+}
+
+.about-company__right-col {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.about-company__heading {
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    margin-bottom: 1.3rem;
+}
+
+.about-company__founded-text {
+    font-family: var(--segoe);
+    font-size: 2.6rem;
+    line-height: 4.1rem;
+}
+
+.about-company__intro-text {
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+    padding: 5.5rem 0;
+    padding-top: 0;
+  
+}
+
+.about-company__features-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -2rem;
+}
+
+.about-company__features-list-item {
+    width: 50%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-company__features-card {
+    flex-grow: 1;
+    padding: 4rem 0;
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+    border-top: 1px solid #b9c1ca;
+    &::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        display: inline-block;
+        background-color: var(--text-color);
+        margin-right: 0.5rem;
+        vertical-align: middle;
+        border-radius: 50%;
+    }
+}
