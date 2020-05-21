@@ -110,10 +110,21 @@
     flex-shrink: 0;
     position: relative;
     top: -1rem;
+    transition: background-color .2s;
     svg {
         fill: white;
         width: 2.2rem;
         height: 2.2rem;
         flex-shrink: 0;
+        transition: fill .2s;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: white;
+
+        svg {
+            fill: var(--primary-color);
+        }
     }
 }

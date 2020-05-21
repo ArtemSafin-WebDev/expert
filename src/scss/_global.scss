@@ -20,6 +20,11 @@ html {
     box-sizing: border-box;
     font-size: 10px;
     @include noHighlight();
+
+
+    @include breakpoint(large-desktop) {
+        font-size: 9px;
+    }
 }
 
 body {

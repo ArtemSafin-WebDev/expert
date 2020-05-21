@@ -1,0 +1,122 @@
+.faq__content {
+    background-color: #f2f4fa;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    color: var(--text-color);
+    position: relative;
+}
+
+.faq__row {
+    display: flex;
+}
+
+.faq__left-col {
+    width: 37rem;
+    margin-right: 4rem;
+    flex-shrink: 0;
+}
+
+.faq__right-col {
+    width: 50%;
+    flex-grow: 1;
+}
+
+.faq__heading {
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.8rem;
+}
+
+.faq__accordeons {
+    border-top: 0.3rem solid var(--text-color);
+}
+
+.faq__accordeon {
+  
+    &:first-child {
+        .faq__accordeon-btn {
+            border-top: none;
+        }
+    }
+}
+
+.faq__accordeon-btn {
+    font-weight: 900;
+    font-size: 21px;
+    line-height: 25px;
+    display: block;
+    width: 100%;
+    padding: 4rem 0;
+    // border-top: 1px solid #b9c1ca;
+    border-top: 1px solid #b9c1ca;
+
+    svg {
+        width: 2.6rem;
+        height: 2.6rem;
+        flex-shrink: 0;
+        margin-left: 2rem;
+        fill: var(--primary-color);
+        transition: transform .2s;
+
+        .faq__accordeon.active & {
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.faq__accordeon-btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq__accordeon-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s linear;
+}
+
+.faq__accordeon-content-inner {
+    padding-top: 4rem;
+    padding-bottom: 5.6rem;
+    border-top: 1px solid #b9c1ca;
+}
+
+.faq__accordeon-content-list-item {
+    position: relative;
+    padding-left: 2.5rem;
+    margin-bottom: 4rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--text-color);
+        position: absolute;
+        left: 0;
+        top: 0.75rem;
+    }
+}
+
+.faq__accordeon-content-question {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 1.8rem;
+}
+
+.faq__accordeon-content-answer {
+    font-size: 1.6rem;
+    line-height: 1.9rem;
+
+    p:not([class]) {
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}

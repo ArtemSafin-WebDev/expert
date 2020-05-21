@@ -1,0 +1,409 @@
+.page-footer {
+    padding-top: 15rem;
+    padding-bottom: 13rem;
+    color: white;
+    position: relative;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(to top, rgba(black, 0.6), rgba(black, 0));
+    }
+}
+
+.page-footer__grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) 56rem;
+    // grid-template-rows: repeat(2, minmax(0, 1fr));
+    grid-template-areas: 'contacts form map' 'info info map';
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+}
+
+.page-footer__contacts-card {
+    padding: 4.5rem;
+    padding-left: 0;
+    grid-area: contacts;
+}
+
+.page-footer__contacts-card-heading {
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    margin-bottom: 12rem;
+}
+
+.page-footer__contacts-card-phone-link {
+    font-weight: bold;
+    font-size: 3.2rem;
+    line-height: 4rem;
+    margin-bottom: 1.4rem;
+    display: inline-block;
+    transition: color 0.2s;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__contacts-schedule {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    font-style: italic;
+}
+
+.page-footer__form-card {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 6rem;
+    grid-area: form;
+}
+
+.page-footer__form-card-heading {
+    font-weight: 900;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    margin-bottom: 5.2rem;
+}
+
+.page-footer__form-card-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-footer__form-card-form-row {
+    margin-bottom: 2.2rem;
+}
+
+.page-footer__form-card-form-input {
+    font: inherit;
+    width: 100%;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    color: white;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid white;
+
+    @include placeholder {
+        color: white;
+    }
+}
+
+.page-footer__form-card-form-submit {
+    display: inline-flex;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+    color: black;
+    align-self: flex-end;
+    background-color: #fff;
+    padding: 2.4rem 2.2rem;
+    transition: background-color 0.2s, color 0.2s;
+    &::after {
+        content: '';
+        margin-left: 3rem;
+        flex-shrink: 0;
+        width: 1rem;
+        height: 1rem;
+        background-color: var(--primary-color);
+        border-radius: 50%;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: black;
+        color: white;
+    }
+}
+
+.page-footer__map-card {
+    grid-area: map;
+    border-left: 1px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+.page-footer__info-card {
+    grid-area: info;
+    border-top: 1px solid white;
+
+    display: grid;
+    grid-template-columns: 1fr fit-content(36rem);
+    grid-gap: 6rem;
+    padding: 4rem;
+    padding-left: 0;
+}
+
+.page-footer__info-card-large-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.page-footer__info-card-large-link {
+    font-weight: bold;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    transition: color 0.2s;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__info-card-small-link {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    display: inline-block;
+    margin-bottom: 1.2rem;
+    transition: color 0.2s;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__info-card-about-company {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: #969696;
+}
+
+.page-footer__info-card-about-company-name {
+    margin-bottom: 1.5rem;
+}
+
+.page-footer__info-card-made-by {
+    .light {
+        color: #d1d1d1;
+        transition: color 0.3s;
+    }
+    &:link,
+    &:visited {
+        color: inherit;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        .light {
+            color: var(--primary-color);
+        }
+    }
+}
+
+.page-footer__info-card-secondary-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.page-footer__info-card-secondary-link {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    transition: color 0.2s;
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--primary-color);
+    }
+}
+
+.page-footer__map-card-nav {
+    display: flex;
+    border-bottom: 1px solid white;
+}
+
+.page-footer__map-card-nav-btn {
+    width: 50%;
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    font-weight: bold;
+    color: rgba(white, 0.4);
+    padding: 3rem 3.2rem;
+    transition: color 0.2s;
+    border-right: 1px solid white;
+    &:last-child {
+        border-right: none;
+    }
+    &.active {
+        background-color: white;
+        color: var(--text-color);
+        .page-footer__map-card-nav-btn-content::after {
+            background-color: var(--primary-color);
+        }
+    }
+}
+
+.page-footer__map-card-nav-btn-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::after {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-left: 1.5rem;
+        background-color: rgba(white, 0.4);
+        transition: background-color 0.2s;
+    }
+}
+
+.page-footer__map-card-content {
+    flex-grow: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.page-footer__map-card-content-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease .2s, visibility 0s linear 0.4s;
+
+    z-index: 5;
+
+    &.active {
+        z-index: 10;
+        transition: all 0.2s;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.page-footer__map-card-container {
+    min-width: 56rem;
+    min-height: 78.5rem;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background-image: url('../img/body-bg-tileable.png');
+        background-size: 100vw 100vw;
+
+        background-position: 30%, center;
+    }
+}
+
+.page-footer__map-card-container-map {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    @include objectFitCover();
+    mix-blend-mode: screen;
+}
+
+.page-footer__map-card-marker {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: white;
+    position: absolute;
+    top: var(--pin-y);
+    left: var(--pin-x);
+}
+
+.page-footer__map-card-marker-pin {
+    width: 7rem;
+    height: auto;
+    margin-right: 2.7rem;
+    flex-shrink: 0;
+   
+}
+
+.page-footer__map-card-marker-content {
+    width: 19.2rem;
+    position: relative;
+    top: -1rem;
+}
+
+.page-footer__map-card-marker-content-name {
+    font-weight: bold;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    margin-bottom: .5rem;
+}
+
+.page-footer__map-card-marker-content-link {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-decoration-line: underline;
+    color: rgba(white, .6);
+    transition: color .2s;
+    &:link,
+    &:visited {
+        color: rgba(white, .6);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: white;
+    }
+}

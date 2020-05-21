@@ -9,7 +9,7 @@ export default function() {
         new Swiper(container, {
             watchOverflow: true,
             effect: 'fade',
-            duration: 700,
+            speed: 900,
             slidesPerView: 1,
             fadeEffect: {
                 crossFade: true
