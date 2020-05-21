@@ -7,24 +7,44 @@
 }
 
 :root {
-    --max-container-width: 1530px;
-    --content-padding: 80px;
+    --max-container-width: 153rem;
+    --content-padding: 8rem;
     --primary-color: #ED1C24;
     --helios-ext: 'HeliosExtC', sans-serif;
     --helios: 'HeliosC', sans-serif;
     --segoe: 'Segoe Script', sans-serif;
     --text-color: #242020;
+
+    @include breakpoint(small-tablet) {
+        --content-padding: 4rem;
+    }
 }
 
 html {
     box-sizing: border-box;
     font-size: 10px;
     @include noHighlight();
-
-
+    font-size: 9.6px;
     @include breakpoint(large-desktop) {
         font-size: 9px;
     }
+
+    @include breakpoint(desktop) {
+        font-size: 8px;
+    }
+
+    @include breakpoint(laptop) {
+        font-size: 7.5px;
+    }
+
+    @include breakpoint(tablet) {
+        font-size: 7px;
+    }
+
+    @include breakpoint(small-tablet) {
+        font-size: 6px;
+    }
+   
 }
 
 body {

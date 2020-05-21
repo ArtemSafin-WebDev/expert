@@ -83,14 +83,14 @@
                                     Пн-пт, 8:30–18:00 МСК
                                 </div>
                             </div>
-                            <a href="#" class="page-header__write-us">
-                                <svg width="22" height="22" aria-hidden="true" class="icon-bubble">
-                                    <use xlink:href="#bubble" />
-                                </svg>
-                            </a>
                         </div>
                     </div>
                 </div>
+                <a href="#" class="page-header__write-us js-sticky-element" data-margin-top="40" data-sticky-wrap="true">
+                    <svg width="22" height="22" aria-hidden="true" class="icon-bubble">
+                        <use xlink:href="#bubble" />
+                    </svg>
+                </a>
             </header>
 
             <main class="page-main">
@@ -100,11 +100,15 @@
                     </div>
                     <div class="container">
                         <h1 class="page-title">
-                            мы Оформляем<br />
-                            допуски СРО
+                            <div class="page-title__inner-content">
+                                мы Оформляем<br />
+                                допуски СРО
+                            </div>
                         </h1>
                         <p class="page-description">
-                            Без посредников и за 1 день
+                            <span class="page-description__inner-content">
+                                Без посредников и за 1 день
+                            </span>
                         </p>
                         <div class="types__content">
                             <ul class="types__list">
@@ -1184,8 +1188,7 @@
                                             <div class="faq__accordeon js-accordion">
                                                 <button class="faq__accordeon-btn js-accordion-btn">
                                                     <span class="faq__accordeon-btn-content">
-                                                        Специалисты для НРС и вступления в СРО
-
+                                                        Специалисты для HPC и вступления в СРО
                                                         <svg width="26" height="26" aria-hidden="true" class="icon-plus">
                                                             <use xlink:href="#plus" />
                                                         </svg>
@@ -1445,6 +1448,26 @@
                     </div>
                 </div>
             </footer>
+
+            <div class="preloader"></div>
+
+            <style>
+                .preloader {
+                    background-color: #fff;
+                    transition: opacity 0.3s, visibility 0s linear 0.3s;
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 400;
+                }
+
+                .loaded .preloader {
+                    opacity: 0;
+                    visibility: hidden;
+                }
+            </style>
 
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="js/app.js"></script>

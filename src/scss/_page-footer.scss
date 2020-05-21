@@ -23,6 +23,11 @@
     grid-template-areas: 'contacts form map' 'info info map';
     border-top: 1px solid white;
     border-bottom: 1px solid white;
+
+
+    @include breakpoint(small-tablet) {
+        grid-template-areas: 'form form map' 'contacts contacts map' 'info info info';
+    }
 }
 
 .page-footer__contacts-card {

@@ -1,15 +1,28 @@
 .page-header {
     position: absolute;
     left: 0;
-    top: 5.2rem;
+    top: 0;
     width: 100%;
     color: white;
     z-index: 200;
+  
+
+  
 }
 
 .page-header__row {
+    padding-top: 5.2rem;
     display: flex;
     align-items: flex-start;
+    animation-name: slide-down;
+    animation-play-state: paused;
+    animation-duration: .6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: 1.3s;
+    .animatable & {
+        animation-play-state: running;
+    }
 }
 
 .page-header__logo-link {
@@ -33,10 +46,19 @@
 .page-header__nav-list {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .page-header__nav-list-item {
     margin-right: 5rem;
+
+    @include breakpoint(large-desktop) {
+        margin-right: 3rem;
+    }
+
+    @include breakpoint(laptop) {
+        margin-right: 2rem;
+    }
     &:last-child {
         margin-right: 0;
     }
@@ -68,7 +90,11 @@
 }
 
 .page-header__contacts-content {
-    margin-right: 4.2rem;
+    margin-right: 10.2rem;
+
+    @include breakpoint(small-tablet) {
+        margin-right: 0;
+    }
 }
 
 .page-header__contacts-phone {
@@ -109,8 +135,28 @@
     border-radius: 50%;
     flex-shrink: 0;
     position: relative;
+    z-index: 700;
     top: -1rem;
     transition: background-color .2s;
+
+
+    animation-name: slide-down;
+    animation-play-state: paused;
+    animation-duration: .6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: 1.3s;
+    
+
+
+    position: fixed;
+    right: 5rem;
+    top: 4rem;
+    z-index: 3000;
+
+    .animatable & {
+        animation-play-state: running;
+    }
     svg {
         fill: white;
         width: 2.2rem;
@@ -125,6 +171,20 @@
 
         svg {
             fill: var(--primary-color);
+        }
+    }
+
+
+    @include breakpoint(small-tablet) {
+        right: 3rem;
+        bottom: 3rem;
+        width: 9rem;
+        height: 9rem;
+        top: auto;
+        left: auto;
+        svg {
+            width: 3.8rem;
+            height: 3.8rem;
         }
     }
 }

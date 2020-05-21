@@ -42,19 +42,22 @@
 
 .faq__accordeon-btn {
     font-weight: 900;
-    font-size: 21px;
-    line-height: 25px;
+    font-size: 2.1rem;
+    line-height: 2.5rem;
     display: block;
     width: 100%;
     padding: 4rem 0;
     // border-top: 1px solid #b9c1ca;
     border-top: 1px solid #b9c1ca;
 
+
+ 
+
     svg {
         width: 2.6rem;
         height: 2.6rem;
         flex-shrink: 0;
-        margin-left: 2rem;
+        margin-left: 4rem;
         fill: var(--primary-color);
         transition: transform .2s;
 
@@ -68,6 +71,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    text-align: left;
 }
 
 .faq__accordeon-content {

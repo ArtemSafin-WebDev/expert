@@ -18,6 +18,17 @@
 
 .types__list {
     display: flex;
+
+
+    animation-name: slide-up;
+    animation-play-state: paused;
+    animation-duration: .6s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    animation-delay: .7s;
+    .animatable & {
+        animation-play-state: running;
+    }
   
 }
 

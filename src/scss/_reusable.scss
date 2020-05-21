@@ -5,7 +5,39 @@
     text-transform: uppercase;
     color: white;
     margin-top: 30rem;
+    overflow: hidden;
+
+
+    @include breakpoint(large-desktop) {
+        margin-top: 27rem;
+    }
+
+    @include breakpoint(desktop) {
+        
+    }
 }
+
+
+.page-title__inner-content,
+.page-description__inner-content {
+    animation-name: slide-up;
+    animation-play-state: paused;
+    animation-duration: .65s;
+    animation-timing-function: ease-out;
+    animation-fill-mode: both;
+    display: block;
+    .animatable & {
+        animation-play-state: running;
+    }
+}
+
+
+.page-description__inner-content {
+    animation-duration: .3s;
+    animation-delay: .2s;
+}
+
+
 
 
 .page-description {
@@ -13,7 +45,10 @@
     line-height: 3rem;
     font-weight: 700;
     margin-top: 3rem;
+    overflow: hidden;
 }
+
+
 
 
 .fullheight-bg {

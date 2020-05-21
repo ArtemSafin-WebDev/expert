@@ -7,6 +7,7 @@ import teamSliders from './teamSlider';
 import reviewsSlider from './reviewsSlider';
 import accordions from './accordions';
 import tabs from './tabs';
+import stickyElements from './stickyElements';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -18,8 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
     reviewsSlider();
     accordions();
     tabs();
+    stickyElements();
 });
 
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
-})
+    setTimeout(() => {
+        document.body.classList.add('animatable');
+    }, 300);
+});
