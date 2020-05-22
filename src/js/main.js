@@ -9,6 +9,7 @@ import accordions from './accordions';
 import tabs from './tabs';
 import stickyElements from './stickyElements';
 import typesSlider from './typesSlider';
+import burgerMenu from './burgerMenu';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     tabs();
     stickyElements();
     typesSlider();
+    burgerMenu();
 });
 
 window.addEventListener('load', function() {
