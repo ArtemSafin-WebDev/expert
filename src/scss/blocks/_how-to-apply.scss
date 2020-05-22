@@ -2,12 +2,22 @@
     background-color: #f2f4fa;
     padding-top: 6rem;
     padding-bottom: 4rem;
+
+    @include breakpoint(mobile) {
+        padding-top: 2rem;
+        padding-bottom: 3rem;
+    }
 }
 
 .how-to-apply__row {
     display: flex;
     padding-bottom: 4rem;
-    border-bottom: 1px solid #B9C1CA;
+    border-bottom: 1px solid #b9c1ca;
+    @include breakpoint(mobile) {
+        padding: 0;
+        border: none;
+        flex-direction: column;
+    }
 }
 
 .how-to-apply__left-col {
@@ -16,6 +26,13 @@
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin: 0;
+        flex-shrink: 1;
+        display: contents;
+    }
 }
 
 .how-to-apply__right-col {
@@ -23,6 +40,10 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
 }
 
 .how-to-apply__heading {
@@ -30,6 +51,12 @@
     font-size: 4rem;
     line-height: 4.8rem;
     margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 1.3rem;
+        padding-right: 5rem;
+    }
 }
 
 .how-to-apply__remark-text {
@@ -43,16 +70,39 @@
             margin-bottom: 0;
         }
     }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        order: 4;
+        padding: 3.5rem 0;
+        padding-right: 4rem;
+        border-bottom: 1px solid #b9c1ca;
+        p:not([class]) {
+            margin-bottom: 1rem;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 .how-to-apply__steps-list {
     margin-top: 2rem;
+    @include breakpoint(mobile) {
+        border-top: 1px solid #b9c1ca;
+        margin: 0;
+    }
 }
 
 .how-to-apply__steps-list-item {
     margin-bottom: 4.5rem;
     &:last-child {
         margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin: 0;
     }
 }
 
@@ -63,7 +113,14 @@
     display: flex;
     align-items: flex-start;
     padding-right: 3rem;
-    
+
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+        border: none;
+        border-bottom: 1px solid #b9c1ca;
+        flex-direction: column;
+        align-items: initial;
+    }
 }
 
 .how-to-apply__steps-card-number {
@@ -72,15 +129,32 @@
     line-height: 1.7rem;
     text-transform: uppercase;
     flex-shrink: 0;
+    @include breakpoint(mobile) {
+        width: auto;
+        display: block;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin-bottom: 0.7rem;
+    }
 }
 
 .how-to-apply__right-col {
     width: 50%;
     flex-grow: 1;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
 }
 
 .how-to-apply__steps-card-text {
     font-weight: bold;
     font-size: 2.6rem;
     line-height: 3.2rem;
+
+    @include breakpoint(mobile) {
+        font-weight: bold;
+        font-size: 1.3rem;
+        line-height: 1.6rem;
+    }
 }

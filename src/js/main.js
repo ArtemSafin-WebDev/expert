@@ -8,6 +8,7 @@ import reviewsSlider from './reviewsSlider';
 import accordions from './accordions';
 import tabs from './tabs';
 import stickyElements from './stickyElements';
+import typesSlider from './typesSlider';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
     accordions();
     tabs();
     stickyElements();
+    typesSlider();
 });
 
 window.addEventListener('load', function() {

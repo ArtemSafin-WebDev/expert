@@ -31,6 +31,12 @@
     @include breakpoint(small-tablet) {
         max-width: 110rem;
     }
+
+    @include breakpoint(mobile) {
+        max-width: none;
+        padding: 0;
+        padding-left: 3rem;
+    }
 }
 
 .page-content {

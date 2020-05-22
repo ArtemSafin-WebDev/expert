@@ -51,39 +51,47 @@
                         <a href="index.html" class="page-header__logo-link">
                             <img src="img/logo.svg" alt="" class="page-header__logo" width="172" />
                         </a>
-
-                        <nav class="page-header__nav">
-                            <ul class="page-header__nav-list">
-                                <li class="page-header__nav-list-item">
-                                    <a href="#" class="page-header__nav-link">
-                                        СРО cтроителей
-                                    </a>
-                                </li>
-                                <li class="page-header__nav-list-item">
-                                    <a href="#" class="page-header__nav-link">
-                                        СРО проектировщиков
-                                    </a>
-                                </li>
-                                <li class="page-header__nav-list-item">
-                                    <a href="#" class="page-header__nav-link">
-                                        СРО изыскателей
-                                    </a>
-                                </li>
-                                <li class="page-header__nav-list-item">
-                                    <a href="#" class="page-header__nav-link">
-                                        Специалисты для HPС
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                        <div class="page-header__contacts">
-                            <div class="page-header__contacts-content">
-                                <a href="tel:+78432266900" class="page-header__contacts-phone">8 843 226-69-00</a>
-                                <div class="page-header__work-time">
-                                    Пн-пт, 8:30–18:00 МСК
+                        <div class="page-header__burger-menu">
+                            <nav class="page-header__nav">
+                                <ul class="page-header__nav-list">
+                                    <li class="page-header__nav-list-item">
+                                        <a href="#" class="page-header__nav-link">
+                                            СРО cтроителей
+                                        </a>
+                                    </li>
+                                    <li class="page-header__nav-list-item">
+                                        <a href="#" class="page-header__nav-link">
+                                            СРО проектировщиков
+                                        </a>
+                                    </li>
+                                    <li class="page-header__nav-list-item">
+                                        <a href="#" class="page-header__nav-link">
+                                            СРО изыскателей
+                                        </a>
+                                    </li>
+                                    <li class="page-header__nav-list-item">
+                                        <a href="#" class="page-header__nav-link">
+                                            Специалисты для HPС
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="page-header__contacts">
+                                <div class="page-header__contacts-content">
+                                    <a href="tel:+78432266900" class="page-header__contacts-phone">8 843 226-69-00</a>
+                                    <div class="page-header__work-time">
+                                        Пн-пт, 8:30–18:00 МСК
+                                    </div>
                                 </div>
                             </div>
                         </div>
+
+                        <button class="page-header__burger">
+                            <span class="page-header__burger-content">
+                                <span></span>
+                                <span></span>
+                            </span>
+                        </button>
                     </div>
                 </div>
                 <a href="#" class="page-header__write-us js-sticky-element" data-margin-top="40" data-sticky-wrap="true">
@@ -94,7 +102,7 @@
             </header>
 
             <main class="page-main">
-                <section class="types">
+                <section class="types js-types-slider">
                     <div class="fullheight-bg">
                         <img src="img/top-bg.jpg" alt="" class="fullheight-bg__image" />
                     </div>
@@ -111,68 +119,70 @@
                             </span>
                         </p>
                         <div class="types__content">
-                            <ul class="types__list">
-                                <li class="types__list-item">
-                                    <div class="types__card">
-                                        <img src="img/types/image-1.png" alt="" class="types__card-image" />
-                                        <h5 class="types__card-title">
-                                            Для строителей
-                                        </h5>
-                                        <div class="types__card-price">
-                                            от 113 750 ₽
+                            <div class="swiper-container">
+                                <ul class="swiper-wrapper types__list">
+                                    <li class="swiper-slide types__list-item">
+                                        <div class="types__card">
+                                            <img src="img/types/image-1.png" alt="" class="types__card-image" />
+                                            <h5 class="types__card-title">
+                                                Для строителей
+                                            </h5>
+                                            <div class="types__card-price">
+                                                от 113 750 ₽
+                                            </div>
+                                            <div class="types__card-time">
+                                                за 1 день
+                                            </div>
+                                            <a href="#" class="types__card-details-link">
+                                                Подробнее
+                                            </a>
+                                            <a href="#" class="types__card-order-link">
+                                                Заказать
+                                            </a>
                                         </div>
-                                        <div class="types__card-time">
-                                            за 1 день
+                                    </li>
+                                    <li class="swiper-slide types__list-item">
+                                        <div class="types__card">
+                                            <img src="img/types/image-2.png" alt="" class="types__card-image" />
+                                            <h5 class="types__card-title">
+                                                Для проектиров-щиков
+                                            </h5>
+                                            <div class="types__card-price">
+                                                от 113 750 ₽
+                                            </div>
+                                            <div class="types__card-time">
+                                                за 1 день
+                                            </div>
+                                            <a href="#" class="types__card-details-link">
+                                                Подробнее
+                                            </a>
+                                            <a href="#" class="types__card-order-link">
+                                                Заказать
+                                            </a>
                                         </div>
-                                        <a href="#" class="types__card-details-link">
-                                            Подробнее
-                                        </a>
-                                        <a href="#" class="types__card-order-link">
-                                            Заказать
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="types__list-item">
-                                    <div class="types__card">
-                                        <img src="img/types/image-2.png" alt="" class="types__card-image" />
-                                        <h5 class="types__card-title">
-                                            Для проектиров-щиков
-                                        </h5>
-                                        <div class="types__card-price">
-                                            от 113 750 ₽
+                                    </li>
+                                    <li class="swiper-slide types__list-item">
+                                        <div class="types__card">
+                                            <img src="img/types/image-3.png" alt="" class="types__card-image" />
+                                            <h5 class="types__card-title">
+                                                Для изыскателей
+                                            </h5>
+                                            <div class="types__card-price">
+                                                от 113 750 ₽
+                                            </div>
+                                            <div class="types__card-time">
+                                                за 1 день
+                                            </div>
+                                            <a href="#" class="types__card-details-link">
+                                                Подробнее
+                                            </a>
+                                            <a href="#" class="types__card-order-link">
+                                                Заказать
+                                            </a>
                                         </div>
-                                        <div class="types__card-time">
-                                            за 1 день
-                                        </div>
-                                        <a href="#" class="types__card-details-link">
-                                            Подробнее
-                                        </a>
-                                        <a href="#" class="types__card-order-link">
-                                            Заказать
-                                        </a>
-                                    </div>
-                                </li>
-                                <li class="types__list-item">
-                                    <div class="types__card">
-                                        <img src="img/types/image-3.png" alt="" class="types__card-image" />
-                                        <h5 class="types__card-title">
-                                            Для изыскателей
-                                        </h5>
-                                        <div class="types__card-price">
-                                            от 113 750 ₽
-                                        </div>
-                                        <div class="types__card-time">
-                                            за 1 день
-                                        </div>
-                                        <a href="#" class="types__card-details-link">
-                                            Подробнее
-                                        </a>
-                                        <a href="#" class="types__card-order-link">
-                                            Заказать
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -383,7 +393,10 @@
                                         <div class="swiper-slide">
                                             <div class="offers__card">
                                                 <div class="offers__card-inner">
-                                                    <img src="img/offers-image.png" alt="" class="offers__card-image offers__card-image--phone" />
+                                                    <div class="offers__card-image-container">
+                                                        <img src="img/offers-image.png" alt="" class="offers__card-image offers__card-image--phone" />
+                                                    </div>
+
                                                     <div class="offers__card-content">
                                                         <h4 class="offers__card-title">
                                                             Не тратьте время!
@@ -412,7 +425,9 @@
                                         <div class="swiper-slide">
                                             <div class="offers__card">
                                                 <div class="offers__card-inner">
-                                                    <img src="img/offers-image.png" alt="" class="offers__card-image offers__card-image--phone" />
+                                                    <div class="offers__card-image-container">
+                                                        <img src="img/offers-image.png" alt="" class="offers__card-image offers__card-image--phone" />
+                                                    </div>
                                                     <div class="offers__card-content">
                                                         <h4 class="offers__card-title">
                                                             Второй слайд

@@ -1,44 +1,74 @@
 .types {
-   
-    
     color: white;
     display: flex;
     flex-direction: column;
     position: relative;
     z-index: 1;
     margin-bottom: 5.5rem;
-
-
-    
+    @include breakpoint(mobile) {
+        margin-bottom: 2.2rem;
+    }
 }
 
 .types__content {
     margin-top: 11rem;
+
+    .swiper-container {
+        overflow: visible;
+        @include breakpointMF(small-tablet) {
+           
+            display: block;
+        }
+    }
+
+    .swiper-wrapper {
+        @include breakpointMF(small-tablet) {
+            display: flex;
+            box-sizing: border-box;
+        }
+    }
+
+
+    .swiper-slide {
+        @include breakpoint(mobile) {
+            width: 33.6rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        margin-top: 6.8rem;
+    }
 }
 
 .types__list {
-    display: flex;
+   
 
 
-    animation-name: slide-up;
-    animation-play-state: paused;
-    animation-duration: .6s;
-    animation-timing-function: ease-out;
-    animation-fill-mode: both;
-    animation-delay: .7s;
-    .animatable & {
-        animation-play-state: running;
+    @include breakpointMF(small-tablet) {
+        display: flex;
+
+        animation-name: slide-up;
+        animation-play-state: paused;
+        animation-duration: 0.6s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+        animation-delay: 0.7s;
+        .animatable & {
+            animation-play-state: running;
+        }
     }
-  
 }
 
 .types__list-item {
-    width: 33.33%;
-    display: flex;
-    flex-direction: column;
-    &:last-child {
-        .types__card {
-            border-right: none;
+
+    @include breakpointMF(small-tablet) {
+        width: 33.33%;
+        display: flex;
+        flex-direction: column;
+        &:last-child {
+            .types__card {
+                border-right: none;
+            }
         }
     }
 }
@@ -65,7 +95,7 @@
         height: 35.2rem;
         background-color: var(--primary-color);
         transform: translateZ(0) translate(-20%, -62%) scale(0);
-        transition: transform .4s ease-out;
+        transition: transform 0.4s ease-out;
         z-index: -1;
         border-radius: 50%;
     }
@@ -74,8 +104,8 @@
         color: inherit;
     }
 
-
-    &:hover {
+    .no-touch &:hover,
+    .swiper-slide-active & {
         &::before {
             transform: translateZ(0) translate(-20%, -62%) scale(1);
         }
@@ -84,9 +114,19 @@
             color: white;
         }
 
-
         .types__card-order-link {
             color: white;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        min-height: 31rem;
+        padding: 2rem;
+        border-right: none;
+        &::before {
+            width: 25rem;
+            height: 25rem;
+            transform: translateZ(0) translate(-50%, -52%) scale(0);
         }
     }
 }
@@ -99,6 +139,11 @@
     max-height: 80%;
     @include objectFitContainBottom();
     z-index: -1;
+
+    @include breakpoint(mobile) {
+        width: 23rem;
+        right: -5rem;
+    }
 }
 
 .types__card-title {
@@ -107,6 +152,13 @@
     line-height: 3.8rem;
     max-width: 30rem;
     margin-bottom: 2.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 2.4rem;
+        margin-bottom: 1.3rem;
+        max-width: 20rem;
+    }
 }
 
 .types__card-price {
@@ -114,12 +166,23 @@
     font-size: 1.7rem;
     line-height: 2.1rem;
     margin-bottom: 0.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+        margin-bottom: 0.3rem;
+    }
 }
 
 .types__card-time {
     font-size: 1.7rem;
     line-height: 2rem;
     margin-bottom: 5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
+    }
 }
 
 .types__card-details-link {
@@ -133,10 +196,16 @@
     line-height: 1.4rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color .3s;
+    transition: color 0.3s;
     &:link,
     &:visited {
         color: #b9c1ca;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin-bottom: 1.2rem;
     }
 }
 
@@ -147,9 +216,14 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: var(--primary-color);
-    transition: color .3s;
+    transition: color 0.3s;
     &:link,
     &:visited {
         color: var(--primary-color);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.7rem;
     }
 }

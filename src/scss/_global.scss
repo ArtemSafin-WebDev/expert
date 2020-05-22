@@ -18,6 +18,10 @@
     @include breakpoint(small-tablet) {
         --content-padding: 4rem;
     }
+
+    @include breakpoint(mobile) {
+        --content-padding: 2rem;
+    }
 }
 
 html {
@@ -43,6 +47,11 @@ html {
 
     @include breakpoint(small-tablet) {
         font-size: 6px;
+    }
+
+
+    @include breakpoint(mobile) {
+        font-size: 10px;
     }
    
 }
