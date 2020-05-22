@@ -14,19 +14,27 @@
         height: 100%;
         background: linear-gradient(to top, rgba(black, 0.6), rgba(black, 0));
     }
+
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
 }
 
 .page-footer__grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr)) 56rem;
-    // grid-template-rows: repeat(2, minmax(0, 1fr));
+
     grid-template-areas: 'contacts form map' 'info info map';
     border-top: 1px solid white;
     border-bottom: 1px solid white;
 
-
     @include breakpoint(small-tablet) {
         grid-template-areas: 'form form map' 'contacts contacts map' 'info info info';
+    }
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: 'contacts' 'map' 'form' 'info';
     }
 }
 
@@ -34,6 +42,9 @@
     padding: 4.5rem;
     padding-left: 0;
     grid-area: contacts;
+    @include breakpoint(mobile) {
+        padding: 5rem 0;
+    }
 }
 
 .page-footer__contacts-card-heading {
@@ -41,6 +52,11 @@
     font-size: 4rem;
     line-height: 4.8rem;
     margin-bottom: 12rem;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 5.6rem;
+    }
 }
 
 .page-footer__contacts-card-phone-link {
@@ -59,12 +75,20 @@
     .touch &:active {
         color: var(--primary-color);
     }
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
 }
 
 .page-footer__contacts-schedule {
     font-size: 1.2rem;
     line-height: 1.4rem;
     font-style: italic;
+    @include breakpoint(mobile) {
+        margin-bottom: 5.5rem;
+    }
 }
 
 .page-footer__form-card {
@@ -72,6 +96,17 @@
     color: white;
     padding: 6rem;
     grid-area: form;
+    @include breakpoint(mobile) {
+        padding: 0;
+        margin-left: calc(-1 * var(--content-padding));
+        padding-left: var(--content-padding);
+        padding-right: var(--content-padding);
+        padding-top: 4.2rem;
+        padding-bottom: 4.2rem;
+
+        position: relative;
+        z-index: 40;
+    }
 }
 
 .page-footer__form-card-heading {
@@ -79,6 +114,11 @@
     font-size: 1.9rem;
     line-height: 2.3rem;
     margin-bottom: 5.2rem;
+    @include breakpoint(mobile) {
+        font-size: 1.9rem;
+        line-height: 2.3rem;
+        margin-bottom: 1.5rem;
+    }
 }
 
 .page-footer__form-card-form {
@@ -88,6 +128,9 @@
 
 .page-footer__form-card-form-row {
     margin-bottom: 2.2rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
 }
 
 .page-footer__form-card-form-input {
@@ -140,6 +183,11 @@
     border-left: 1px solid white;
     position: relative;
     z-index: 1;
+    overflow: hidden;
+    @include breakpoint(mobile) {
+        border: none;
+        margin-left: calc(-1 * var(--content-padding));
+    }
 }
 
 .page-footer__info-card {
@@ -151,12 +199,26 @@
     grid-gap: 6rem;
     padding: 4rem;
     padding-left: 0;
+
+    @include breakpoint(mobile) {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 0;
+        grid-gap: 0;
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+        border: none;
+        grid-template-areas: 'info-large' 'info-secondary' 'info-small' 'info-about';
+    }
 }
 
 .page-footer__info-card-large-links {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include breakpoint(mobile) {
+        grid-area: info-large;
+        padding-bottom: 3.7rem;
+    }
 }
 
 .page-footer__info-card-large-link {
@@ -178,6 +240,19 @@
     .touch &:active {
         color: var(--primary-color);
     }
+
+    @include breakpoint(mobile) {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+}
+
+.page-footer__info-card-small-links {
+    @include breakpoint(mobile) {
+        grid-area: info-small;
+        padding-top: 4rem;
+        padding-bottom: 10rem;
+    }
 }
 
 .page-footer__info-card-small-link {
@@ -186,6 +261,7 @@
     display: inline-block;
     margin-bottom: 1.2rem;
     transition: color 0.2s;
+
     &:last-child {
         margin-bottom: 0;
     }
@@ -205,6 +281,9 @@
     font-size: 1.2rem;
     line-height: 1.5rem;
     color: #969696;
+    @include breakpoint(mobile) {
+        grid-area: info-about;
+    }
 }
 
 .page-footer__info-card-about-company-name {
@@ -233,6 +312,12 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+
+    @include breakpoint(mobile) {
+        grid-area: info-secondary;
+        padding-bottom: 4rem;
+        border-bottom: 1px solid white;
+    }
 }
 
 .page-footer__info-card-secondary-link {
@@ -259,6 +344,11 @@
 .page-footer__map-card-nav {
     display: flex;
     border-bottom: 1px solid white;
+
+    @include breakpoint(mobile) {
+        border: none;
+        flex-direction: column;
+    }
 }
 
 .page-footer__map-card-nav-btn {
@@ -280,6 +370,12 @@
             background-color: var(--primary-color);
         }
     }
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        text-align: left;
+        padding: 3rem var(--content-padding);
+    }
 }
 
 .page-footer__map-card-nav-btn-content {
@@ -296,6 +392,12 @@
         background-color: rgba(white, 0.4);
         transition: background-color 0.2s;
     }
+
+    @include breakpoint(mobile) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 }
 
 .page-footer__map-card-content {
@@ -306,6 +408,11 @@
     width: 100%;
     height: 100%;
     z-index: -1;
+
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        position: relative;
+    }
 }
 
 .page-footer__map-card-content-item {
@@ -316,7 +423,7 @@
     height: 100%;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.2s ease .2s, visibility 0s linear 0.4s;
+    transition: opacity 0.2s ease 0.2s, visibility 0s linear 0.4s;
 
     z-index: 5;
 
@@ -325,6 +432,18 @@
         transition: all 0.2s;
         opacity: 1;
         visibility: visible;
+        @include breakpoint(mobile) {
+            position: relative;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        &::after {
+            content: '';
+            display: block;
+            width: 100%;
+            padding-bottom: 100%;
+        }
     }
 }
 
@@ -352,6 +471,15 @@
         background-size: 100vw 100vw;
 
         background-position: 30%, center;
+
+        @include breakpoint(mobile) {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background-position: center;
+            background-image: none;
+            background-color: rgba(#69302c, .4);
+        }
     }
 }
 
@@ -380,7 +508,6 @@
     height: auto;
     margin-right: 2.7rem;
     flex-shrink: 0;
-   
 }
 
 .page-footer__map-card-marker-content {
@@ -393,18 +520,18 @@
     font-weight: bold;
     font-size: 1.6rem;
     line-height: 2rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
 }
 
 .page-footer__map-card-marker-content-link {
     font-size: 1.2rem;
     line-height: 1.4rem;
     text-decoration-line: underline;
-    color: rgba(white, .6);
-    transition: color .2s;
+    color: rgba(white, 0.6);
+    transition: color 0.2s;
     &:link,
     &:visited {
-        color: rgba(white, .6);
+        color: rgba(white, 0.6);
     }
 
     .no-touch &:hover,
