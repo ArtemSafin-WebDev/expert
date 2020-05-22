@@ -2,6 +2,20 @@
     padding-top: 7.7rem;
     padding-bottom: 11.5rem;
     color: white;
+
+    .inner-container {
+        @include breakpoint(mobile) {
+            padding: 0;
+            max-width: none;
+            width: 100%;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        padding-top: 5rem;
+        padding-bottom: 9rem;
+        position: relative;
+    }
 }
 
 .reviews__heading {
@@ -9,14 +23,28 @@
     font-size: 3.2rem;
     line-height: 3.8rem;
     margin-bottom: 6.2rem;
+    @include breakpoint(mobile) {
+        font-weight: 900;
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 4rem;
+        padding-right: 7rem;
+    }
 }
 
 .reviews__slider-wrapper {
     position: relative;
+    @include breakpoint(mobile) {
+        position: static;
+    }
 }
 
 .reviews__slider {
     display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        padding-right: var(--content-padding);
+    }
 }
 
 .reviews__slider-main {
@@ -24,7 +52,10 @@
     width: 50%;
     position: relative;
     z-index: 1;
-    
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        width: 100%;
+    }
 }
 
 .reviews__slider-main-bg {
@@ -32,13 +63,35 @@
     left: 0;
     top: 0;
     right: 0;
-    bottom: -7rem;
+
     z-index: 2;
     pointer-events: none;
     bottom: -3rem;
     svg {
         width: 100%;
         height: 100%;
+    }
+
+    @include breakpoint(mobile) {
+        bottom: -3rem;
+    }
+}
+
+.reviews__slider-main-bg-frame {
+    width: 100%;
+    height: 100%;
+
+    &--desktop {
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+
+    &--mobile {
+        display: none;
+        @include breakpoint(mobile) {
+            display: block;
+        }
     }
 }
 
@@ -50,6 +103,19 @@
         // overflow: visible;
         margin-right: -50rem;
         padding-right: 50rem;
+        @include breakpoint(mobile) {
+            margin: 0 calc(-1 * var(--content-padding));
+            // padding: 0 var(--content-padding);
+            padding: 0;
+            overflow: visible;
+            
+        }
+    }
+
+    @include breakpoint(mobile) {
+        width: auto;
+        flex-shrink: 1;
+        margin-top: 3.8rem;
     }
 }
 
@@ -60,6 +126,11 @@
     flex-direction: column;
     justify-content: center;
     cursor: default;
+
+    @include breakpoint(mobile) {
+        min-height: auto;
+        padding: 0 var(--content-padding);
+    }
 }
 
 .reviews__slider-secondary-card-name {
@@ -68,6 +139,11 @@
     font-size: 2rem;
     line-height: 2.5rem;
     margin-bottom: 1.1rem;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        margin-bottom: 1.1rem;
+    }
 }
 
 .reviews__slider-secondary-card-role {
@@ -75,6 +151,10 @@
     font-weight: normal;
     font-size: 1.6rem;
     line-height: 1.9rem;
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
 }
 
 .reviews__slider-main-card {
@@ -83,6 +163,10 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    @include breakpoint(mobile) {
+        padding: 2.5rem 3rem;
+        min-height: auto;
+    }
 }
 
 .reviews__slider-main-card-text {
@@ -90,11 +174,16 @@
     font-size: 3rem;
     line-height: 3.6rem;
 
-   
-
     &::before {
         content: '“ ';
         color: var(--primary-color);
+        font-weight: 900;
+    }
+
+    @include breakpoint(mobile) {
+        font-weight: 600;
+        font-size: 1.7rem;
+        line-height: 2rem;
     }
 }
 
@@ -108,6 +197,14 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @include breakpoint(mobile) {
+        transform: none;
+        top: 4.2rem;
+        right: var(--content-padding);
+        left: auto;
+        flex-direction: row;
+    }
 }
 
 .reviews__slider-btn {
@@ -135,6 +232,12 @@
         svg {
             width: 2rem;
             height: 1.4rem;
+        }
+
+        @include breakpoint(mobile) {
+            order: 3;
+            margin: 0;
+            margin-left: 1.3rem;
         }
     }
 

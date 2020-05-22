@@ -650,8 +650,10 @@
                                 </div>
                             </div>
                         </div>
-
-                        <img src="img/expert-word.svg" alt="" class="gallery__company-name" />
+                        <picture>
+                            <source srcset="img/expert-word-bold.svg" media="(max-width: 767px)" />
+                            <img src="img/expert-word.svg" alt="" class="gallery__company-name" />
+                        </picture>
                     </div>
                     <div class="container">
                         <div class="gallery__slider-wrapper">
@@ -705,7 +707,10 @@
                                             <div class="swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <div class="team__card">
-                                                        <img src="img/team/girl-1.png" alt="" class="team__card-image" />
+                                                        <div class="team__card-image-container">
+                                                            <img src="img/team/girl-1.png" alt="" class="team__card-image" />
+                                                        </div>
+
                                                         <div class="team__card-info">
                                                             <div class="team__card-info-circle" ie-style="--dot-x: 3.6rem; --dot-y: 3.1rem;" style="--dot-x: 3.6rem; --dot-y: 3.1rem;">
                                                                 <div class="team__card-info-circle-dot"></div>
@@ -723,7 +728,9 @@
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="team__card">
-                                                        <img src="img/team/girl-2.png" alt="" class="team__card-image" />
+                                                        <div class="team__card-image-container">
+                                                            <img src="img/team/girl-2.png" alt="" class="team__card-image" />
+                                                        </div>
                                                         <div class="team__card-info">
                                                             <div class="team__card-info-circle" ie-style="--dot-x: 1.5rem; --dot-y: 2rem;" style="--dot-x: 1.5rem; --dot-y: 2rem;">
                                                                 <div class="team__card-info-circle-dot"></div>
@@ -741,7 +748,9 @@
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="team__card">
-                                                        <img src="img/team/girl-3.png" alt="" class="team__card-image" />
+                                                        <div class="team__card-image-container">
+                                                            <img src="img/team/girl-3.png" alt="" class="team__card-image" />
+                                                        </div>
                                                         <div class="team__card-info">
                                                             <div class="team__card-info-circle" ie-style="--dot-x: 3.4rem; --dot-y: 1.6rem;" style="--dot-x: 3.4rem; --dot-y: 1.6rem;">
                                                                 <div class="team__card-info-circle-dot"></div>
@@ -759,7 +768,9 @@
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="team__card">
-                                                        <img src="img/team/girl-1.png" alt="" class="team__card-image" />
+                                                        <div class="team__card-image-container">
+                                                            <img src="img/team/girl-1.png" alt="" class="team__card-image" />
+                                                        </div>
                                                         <div class="team__card-info">
                                                             <div class="team__card-info-circle" ie-style="--dot-x: 3.6rem; --dot-y: 3.1rem;" style="--dot-x: 3.6rem; --dot-y: 3.1rem;">
                                                                 <div class="team__card-info-circle-dot"></div>
@@ -777,7 +788,9 @@
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="team__card">
-                                                        <img src="img/team/girl-2.png" alt="" class="team__card-image" />
+                                                        <div class="team__card-image-container">
+                                                            <img src="img/team/girl-2.png" alt="" class="team__card-image" />
+                                                        </div>
                                                         <div class="team__card-info">
                                                             <div class="team__card-info-circle" ie-style="--dot-x: 1.5rem; --dot-y: 2rem;" style="--dot-x: 1.5rem; --dot-y: 2rem;">
                                                                 <div class="team__card-info-circle-dot"></div>
@@ -795,7 +808,9 @@
                                                 </div>
                                                 <div class="swiper-slide">
                                                     <div class="team__card">
-                                                        <img src="img/team/girl-3.png" alt="" class="team__card-image" />
+                                                        <div class="team__card-image-container">
+                                                            <img src="img/team/girl-3.png" alt="" class="team__card-image" />
+                                                        </div>
                                                         <div class="team__card-info">
                                                             <div class="team__card-info-circle" ie-style="--dot-x: 3.4rem; --dot-y: 1.6rem;" style="--dot-x: 3.4rem; --dot-y: 1.6rem;">
                                                                 <div class="team__card-info-circle-dot"></div>
@@ -846,17 +861,29 @@
                                     <div class="reviews__slider">
                                         <div class="reviews__slider-main">
                                             <div class="reviews__slider-main-bg">
-                                                <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 881 390">
+                                                <svg class="reviews__slider-main-bg-frame reviews__slider-main-bg-frame--desktop" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 881 390">
                                                     <defs>
                                                         <style>
-                                                            .cls-1 {
+                                                            .desktop-frame {
                                                                 fill: none;
                                                                 stroke: #ffffff;
                                                                 stroke-width: 5px;
                                                             }
                                                         </style>
                                                     </defs>
-                                                    <path class="cls-1" d="M850.34,356H2.5V2.5h876V383.84l-26.36-27.12-.74-.76Z" />
+                                                    <path class="desktop-frame" vector-effect="non-scaling-stroke" d="M850.34,356H2.5V2.5h876V383.84l-26.36-27.12-.74-.76Z" />
+                                                </svg>
+                                                <svg class="reviews__slider-main-bg-frame reviews__slider-main-bg-frame--mobile" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" viewBox="0 0 338 256">
+                                                    <defs>
+                                                        <style>
+                                                            .mobile-frame {
+                                                                fill: none;
+                                                                stroke: #ffffff;
+                                                                stroke-width: 5px;
+                                                            }
+                                                        </style>
+                                                    </defs>
+                                                    <path vector-effect="non-scaling-stroke" class="mobile-frame" d="M307.34,221H2.5V2.5h333V248.88l-26.36-27.12-.74-.76Z" />
                                                 </svg>
                                             </div>
 

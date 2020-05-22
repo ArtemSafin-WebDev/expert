@@ -59,29 +59,31 @@
     position: relative;
     z-index: 1;
     transition: color 0.2s;
-    .no-touch &:hover {
-        .our-offices__card-address-name {
-            color: rgba(white, 0.2);
-        }
-
-        .our-offices__card-address-heading {
-            color: rgba(white, 0.3);
-        }
-
-        .our-offices__card-address-link {
-            &::after {
-                background-color: var(--primary-color);
+    @include breakpointMF(small-tablet) {
+        .no-touch &:hover {
+            .our-offices__card-address-name {
+                color: rgba(white, 0.2);
             }
-        }
 
-        .our-offices__card-overlay {
-            transition: all 0.3s;
-            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
-        }
+            .our-offices__card-address-heading {
+                color: rgba(white, 0.3);
+            }
 
-        .our-offices__card-overlay-image-pin {
-            transform: translate(var(--pin-x, 17rem), var(--pin-y, 13rem)) translateY(0);
-            transition: transform 0.3s ease-out;
+            .our-offices__card-address-link {
+                &::after {
+                    background-color: var(--primary-color);
+                }
+            }
+
+            .our-offices__card-overlay {
+                transition: all 0.3s;
+                clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            }
+
+            .our-offices__card-overlay-image-pin {
+                transform: translate(var(--pin-x, 17rem), var(--pin-y, 13rem)) translateY(0);
+                transition: transform 0.3s ease-out;
+            }
         }
     }
 
@@ -90,8 +92,6 @@
         border: none;
         border-top: 1px solid #b9c1ca;
         min-height: auto;
-
-        
     }
 }
 
@@ -242,8 +242,6 @@
     }
 
     @include breakpoint(mobile) {
-
-
     }
 }
 
@@ -284,7 +282,6 @@
     transition: opacity 0.3s, visibility 0s linear 0.3s, clip-path 0.3s;
 
     clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
-
 
     @include breakpoint(mobile) {
         display: none;

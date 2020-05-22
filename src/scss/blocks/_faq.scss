@@ -4,27 +4,49 @@
     padding-bottom: 15rem;
     color: var(--text-color);
     position: relative;
+
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+        padding-bottom: 5rem;
+    }
 }
 
 .faq__row {
     display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
 }
 
 .faq__left-col {
     width: 37rem;
     margin-right: 4rem;
     flex-shrink: 0;
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-right: 0;
+        flex-shrink: 1;
+    }
 }
 
 .faq__right-col {
     width: 50%;
     flex-grow: 1;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+    }
 }
 
 .faq__heading {
     font-weight: 900;
     font-size: 4rem;
     line-height: 4.8rem;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 3rem;
+    }
 }
 
 .faq__accordeons {
@@ -32,7 +54,6 @@
 }
 
 .faq__accordeon {
-  
     &:first-child {
         .faq__accordeon-btn {
             border-top: none;
@@ -50,20 +71,30 @@
     // border-top: 1px solid #b9c1ca;
     border-top: 1px solid #b9c1ca;
 
-
- 
-
     svg {
         width: 2.6rem;
         height: 2.6rem;
         flex-shrink: 0;
         margin-left: 4rem;
         fill: var(--primary-color);
-        transition: transform .2s;
+        transition: transform 0.2s;
 
         .faq__accordeon.active & {
             transform: rotate(45deg);
         }
+
+        @include breakpoint(mobile) {
+            width: 2rem;
+            height: 2rem;
+            margin-left: 3rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        padding: 3rem 0;
+        padding-right: 3rem;
     }
 }
 
@@ -77,13 +108,18 @@
 .faq__accordeon-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height .4s linear;
+    transition: max-height 0.4s linear;
 }
 
 .faq__accordeon-content-inner {
     padding-top: 4rem;
     padding-bottom: 5.6rem;
     border-top: 1px solid #b9c1ca;
+    @include breakpoint(mobile) {
+        padding-top: 2.2rem;
+        padding-bottom: 5rem;
+        padding-right: 3rem;
+    }
 }
 
 .faq__accordeon-content-list-item {
@@ -103,6 +139,16 @@
         position: absolute;
         left: 0;
         top: 0.75rem;
+        @include breakpoint(mobile) {
+            width: 0.7rem;
+            height: 0.7rem;
+            top: .65rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        padding-left: 2rem;
+        margin-bottom: 3rem;
     }
 }
 
@@ -111,6 +157,11 @@
     font-size: 2rem;
     line-height: 2.5rem;
     margin-bottom: 1.8rem;
+    @include breakpoint(mobile) {
+        font-size: 1.6rem;
+        line-height: 2rem;
+        margin-bottom: 1.4rem;
+    }
 }
 
 .faq__accordeon-content-answer {
@@ -119,8 +170,16 @@
 
     p:not([class]) {
         margin-bottom: 2rem;
+        @include breakpoint(mobile) {
+            margin-bottom: 1rem;
+        }
         &:last-child {
             margin-bottom: 0;
         }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
     }
 }

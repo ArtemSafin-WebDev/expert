@@ -18,8 +18,13 @@ export default function() {
         });
 
         const secondarySlider = new Swiper(secondaryContainer, {
-            spaceBetween: 130,
-            speed: 1200
+            spaceBetween: 0,
+            speed: 1200,
+            breakpoints: {
+                768: {
+                    spaceBetween: 130,
+                }
+            }
         });
 
         mainSlider.controller.control = secondarySlider;
