@@ -91,7 +91,7 @@
             @content;
         }
     } @else if $class == mobile {
-        @media only screen and (max-width: (768px)) {
+        @media only screen and (max-width: (767px)) {
             @content;
         }
     } @else if $class == small-mobile {

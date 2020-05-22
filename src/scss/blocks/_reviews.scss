@@ -52,6 +52,10 @@
     width: 50%;
     position: relative;
     z-index: 1;
+    .swiper-slide {
+        display: flex;
+        flex-direction: column;
+    }
     @include breakpoint(mobile) {
         flex-grow: 0;
         width: 100%;
@@ -166,6 +170,7 @@
     @include breakpoint(mobile) {
         padding: 2.5rem 3rem;
         min-height: auto;
+        flex-grow: 1;
     }
 }
 

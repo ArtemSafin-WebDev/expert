@@ -26,6 +26,8 @@
         order: 3;
         margin-top: 2rem;
         padding: 0 var(--content-padding);
+        position: relative;
+        z-index: 80;
     }
 }
 
@@ -205,9 +207,12 @@
     width: 50%;
     position: relative;
     z-index: 90;
-
+    @include breakpoint(small-tablet) {
+        padding-right: 2rem;
+    }
     @include breakpoint(mobile) {
         width: 100%;
+        padding: 0;
     }
 }
 
