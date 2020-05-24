@@ -10,6 +10,7 @@ import tabs from './tabs';
 import stickyElements from './stickyElements';
 import typesSlider from './typesSlider';
 import burgerMenu from './burgerMenu';
+import scrollAnimations from './scrollAnimations';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
     stickyElements();
     typesSlider();
     burgerMenu();
+    scrollAnimations();
 });
 
 window.addEventListener('load', function() {

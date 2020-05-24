@@ -1322,6 +1322,7 @@ img.lazyload:not([src]) {
 .page-footer {
   padding-top: 15rem;
   padding-bottom: 13rem;
+  padding-bottom: 10rem;
   color: white;
   position: relative;
   z-index: 1; }
@@ -2204,11 +2205,16 @@ img.lazyload:not([src]) {
 .advantages__content {
   padding-top: 13rem;
   padding-bottom: 8rem;
-  background-color: #f2f4fa; }
+  background-color: #f2f4fa;
+  background-image: url("../img/ghost-e.png");
+  background-position: right top;
+  background-size: auto 44.2rem;
+  background-repeat: no-repeat; }
   @media only screen and (max-width: 767px) {
     .advantages__content {
       padding-top: 4rem;
-      padding-bottom: 4rem; } }
+      padding-bottom: 4rem;
+      background-image: none; } }
 
 .advantages__heading {
   font-weight: 900;
@@ -2428,12 +2434,10 @@ img.lazyload:not([src]) {
         .how-to-apply__remark-text p:not([class]):last-child {
           margin-bottom: 0; } }
 
-.how-to-apply__steps-list {
-  margin-top: 2rem; }
-  @media only screen and (max-width: 767px) {
-    .how-to-apply__steps-list {
-      border-top: 1px solid #b9c1ca;
-      margin: 0; } }
+@media only screen and (max-width: 767px) {
+  .how-to-apply__steps-list {
+    border-top: 1px solid #b9c1ca;
+    margin: 0; } }
 
 .how-to-apply__steps-list-item {
   margin-bottom: 4.5rem; }
@@ -2465,7 +2469,8 @@ img.lazyload:not([src]) {
               flex-direction: column;
       -webkit-box-align: initial;
           -ms-flex-align: initial;
-              align-items: initial; } }
+              align-items: initial;
+      padding-right: 10rem; } }
 
 .how-to-apply__steps-card-number {
   width: 20rem;
@@ -2486,13 +2491,92 @@ img.lazyload:not([src]) {
   width: 50%;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
-          flex-grow: 1; }
+          flex-grow: 1;
+  position: relative; }
   @media only screen and (max-width: 767px) {
     .how-to-apply__right-col {
       width: 100%;
       -webkit-box-flex: 0;
           -ms-flex-positive: 0;
               flex-grow: 0; } }
+
+.how-to-apply__red-label {
+  position: absolute;
+  top: 8.2rem;
+  right: -6rem;
+  width: 15rem;
+  height: 15rem;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1.5rem;
+  font-weight: 900;
+  font-size: 1.4rem;
+  line-height: 1.7rem;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: -webkit-transform .3s;
+  transition: -webkit-transform .3s;
+  transition: transform .3s;
+  transition: transform .3s, -webkit-transform .3s; }
+  .how-to-apply__red-label:link, .how-to-apply__red-label:visited {
+    color: white; }
+  .no-touch .how-to-apply__red-label:hover {
+    -webkit-transform: rotate(-10deg) scale(1.1);
+            transform: rotate(-10deg) scale(1.1); }
+  @media only screen and (max-width: 767px) {
+    .how-to-apply__red-label {
+      width: 10rem;
+      height: 10rem;
+      font-size: 1rem;
+      line-height: 1.3;
+      top: 31rem;
+      right: 1rem; } }
+
+.how-to-apply__red-label-circle {
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%; }
+
+.how-to-apply__red-label-circle-dot {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  background-color: #fff;
+  top: 1.5rem;
+  right: 5rem;
+  border-radius: 50%; }
+  @media only screen and (max-width: 767px) {
+    .how-to-apply__red-label-circle-dot {
+      width: 0.7rem;
+      height: 0.7rem;
+      top: 1rem;
+      right: 3.5rem; } }
+
+.how-to-apply__red-label-text {
+  position: relative;
+  z-index: 20; }
 
 .how-to-apply__steps-card-text {
   font-weight: bold;
