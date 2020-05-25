@@ -40,7 +40,19 @@ export default function() {
             autoAlpha: 0,
             scale: 0.99,
             ease: 'none'
-        }).to(
+        });
+
+        new ScrollMagic.Scene({
+            triggerElement: types,
+            triggerHook: 0,
+            duration: '45%'
+        })
+            .setTween(tl)
+            .addTo(controller);
+
+        const bgTl = gsap.timeline();
+
+        bgTl.to(
             bgImage,
             {
                 autoAlpha: 0,
@@ -49,13 +61,12 @@ export default function() {
             },
             0
         );
-
         new ScrollMagic.Scene({
             triggerElement: types,
             triggerHook: 0,
-            duration: '45%'
+            duration: '35%'
         })
-            .setTween(tl)
+            .setTween(bgTl)
             .addTo(controller);
     }
 
