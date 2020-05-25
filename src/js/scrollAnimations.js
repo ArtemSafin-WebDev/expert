@@ -13,19 +13,29 @@ export default function() {
     const pageFooter = document.querySelector('.page-footer');
     const controller = new ScrollMagic.Controller();
     const faq = document.querySelector('.faq');
-
+   
     if (types) {
         const introText = types.querySelector('.types__intro-text');
         const pageHeader = document.querySelector('.page-header');
+        const bgImage = types.querySelector('.fullheight-bg')
         const tl = gsap.timeline();
 
         tl.set(introText, { transformOrigin: 'left top' }).to(introText, {
-            opacity: 0,
-            duration: 1,
-            y: 250,
-            scale: 0.975,
+          
+            duration: .5,
+           
+            scale: 0.92,
             ease: 'none'
-        });
+        }).to(introText, {
+            duration: .7,
+            y: 250,
+            ease: 'none',
+            opacity: 0,
+        }, .3).to(bgImage, {
+            opacity: 0,
+            duration: .5,
+            ease: 'none'
+        }, .5);
 
         // new ScrollMagic.Scene({
         //     triggerElement: types,
