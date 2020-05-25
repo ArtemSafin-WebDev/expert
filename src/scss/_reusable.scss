@@ -4,15 +4,13 @@
     line-height: 6rem;
     text-transform: uppercase;
     color: white;
-    margin-top: 30rem;
+   
     overflow: hidden;
-
-    @include breakpoint(large-desktop) {
-        margin-top: 27rem;
-    }
+   
+  
 
     @include breakpoint(mobile) {
-        margin-top: 12rem;
+      
         font-size: 3rem;
         line-height: 3.6rem;
     }

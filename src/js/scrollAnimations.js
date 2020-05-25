@@ -13,57 +13,50 @@ export default function() {
     const pageFooter = document.querySelector('.page-footer');
     const controller = new ScrollMagic.Controller();
     const faq = document.querySelector('.faq');
-   
+
     if (types) {
         const introText = types.querySelector('.types__intro-text');
+        const introTextWrapper = types.querySelector('.types__intro-text-wrapper');
         const pageHeader = document.querySelector('.page-header');
-        const bgImage = types.querySelector('.fullheight-bg')
+        const bgImage = types.querySelector('.fullheight-bg');
         const tl = gsap.timeline();
 
-        tl.set(introText, { transformOrigin: 'left top' }).to(introText, {
-          
-            duration: .5,
-           
-            scale: 0.92,
-            ease: 'none'
-        }).to(introText, {
-            duration: .7,
-            y: 250,
-            ease: 'none',
-            opacity: 0,
-        }, .3).to(bgImage, {
-            opacity: 0,
-            duration: .5,
-            ease: 'none'
-        }, .5);
+        gsap.set(introTextWrapper, {
+            minHeight: introText.offsetHeight
+        });
+        gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top, width: '100%' });
+        gsap.set(bgImage, { position: 'fixed' });
 
-        // new ScrollMagic.Scene({
-        //     triggerElement: types,
-        //     triggerHook: 0,
-        //     duration: '15%'
-        // })
-        //     .setPin(types, {
-        //         pushFollowers: true
-        //     })
-        //     .addTo(controller);
+        let resizeTimer = null;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function() {
+                gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top, width: '100%' });
+            }, 250);
+        });
+
+        tl.to(introText, {
+            duration: 1,
+            autoAlpha: 0,
+            scale: 0.99,
+            ease: 'none'
+        }).to(
+            bgImage,
+            {
+                autoAlpha: 0,
+                duration: 1,
+                ease: 'none'
+            },
+            0
+        );
 
         new ScrollMagic.Scene({
             triggerElement: types,
             triggerHook: 0,
-            duration: '35%'
+            duration: '45%'
         })
             .setTween(tl)
             .addTo(controller);
-
-        // new ScrollMagic.Scene({
-        //     triggerElement: types,
-        //     triggerHook: 0,
-        //     duration: '15%'
-        // })
-        //     .setPin(pageHeader, {
-        //         pushFollowers: false
-        //     })
-        //     .addTo(controller);
     }
 
     if (apply) {
