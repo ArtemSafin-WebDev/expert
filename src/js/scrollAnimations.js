@@ -38,7 +38,7 @@ export default function() {
         tl.to(introText, {
             duration: 1,
             autoAlpha: 0,
-            scale: 0.99,
+            scale: 0.98,
             ease: 'none'
         });
 
@@ -55,7 +55,7 @@ export default function() {
         bgTl.to(
             bgImage,
             {
-                autoAlpha: 0,
+                filter: 'blur(18px)',
                 duration: 1,
                 ease: 'none'
             },
