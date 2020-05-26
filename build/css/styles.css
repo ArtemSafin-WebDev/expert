@@ -659,6 +659,9 @@ html {
   @media only screen and (max-width: 767px) {
     html {
       font-size: 10px; } }
+  @media only screen and (max-width: 370px) {
+    html {
+      font-size: 8px; } }
 
 body {
   min-width: 320px;
