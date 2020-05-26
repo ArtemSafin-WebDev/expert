@@ -15,7 +15,8 @@ export default function() {
     const faq = document.querySelector('.faq');
     const bgImage = document.querySelector('.fullheight-bg');
     const bgImageOverlay = document.querySelector('.fullheight-bg__overlay');
-
+    const sidelogo = document.querySelector('.sidelogo');
+    const container = document.querySelector('.container');
     if (types) {
         const introText = types.querySelector('.types__intro-text');
         const introTextWrapper = types.querySelector('.types__intro-text-wrapper');
@@ -29,18 +30,42 @@ export default function() {
         gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top + window.pageYOffset, width: '100%' });
         gsap.set(bgImage, { position: 'fixed' });
 
+        gsap.set(sidelogo, {
+            left: 'auto',
+            right:
+                parseFloat(window.getComputedStyle(container).getPropertyValue('width')) -
+                parseFloat(window.getComputedStyle(container).getPropertyValue('padding-left')) / 2 -
+                parseFloat(window.getComputedStyle(sidelogo).getPropertyValue('width')) / 2
+        });
+
         let resizeTimer = null;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
                 gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top + window.pageYOffset, width: '100%' });
+
+                gsap.set(sidelogo, {
+                    left: 'auto',
+                    right:
+                        parseFloat(window.getComputedStyle(container).getPropertyValue('width')) -
+                        parseFloat(window.getComputedStyle(container).getPropertyValue('padding-left')) / 2 -
+                        parseFloat(window.getComputedStyle(sidelogo).getPropertyValue('width')) / 2
+                });
             }, 250);
         });
+
+        new ScrollMagic.Scene({
+          
+            triggerHook: 'onEnter',
+            duration: '100%'
+        })
+            .setClassToggle(sidelogo, 'hidden')
+            .addTo(controller);
 
         tl.to(introText, {
             duration: 1,
             autoAlpha: 0,
-            scale: 0.98,
+            scale: 0.97,
             ease: 'none'
         });
 
