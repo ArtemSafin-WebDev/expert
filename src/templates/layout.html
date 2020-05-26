@@ -1,17 +1,15 @@
-{% if not(title) %}
-    {% set title = "Modern Boilerplate" %}
-{% endif %}
+{% if not(title) %} {% set title = "Modern Boilerplate" %} {% endif %}
 
 <!DOCTYPE html>
 <html lang="ru">
     <head>
-        <meta charset="UTF-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <script>
             window.MSInputMethodContext && document.documentMode && document.write('<script src="assets/js/ie11CustomProperties.js"><\x2fscript>');
         </script>
-        <link rel="stylesheet" href="css/styles.min.css"/>
+        <link rel="stylesheet" href="css/styles.min.css" />
         <title>
             {{ title }}
         </title>
@@ -20,16 +18,17 @@
         <div class="sprite" aria-hidden="true" style="position: absolute; width: 0; height: 0; overflow: hidden;">
             {% include "sprite.njk" %}
         </div>
-
+        <div class="fullheight-bg">
+            <img src="img/top-bg.jpg" alt="" class="fullheight-bg__image" />
+            <span class="fullheight-bg__overlay"></span>
+        </div>
         <div class="page-content">
-           
             {% include "partials/header.html" %}
             <main class="page-main">
                 {% block content %}{% endblock %}
             </main>
-            {% include "partials/footer.html" %}
-            {% include "partials/preloader.html" %}
-          
+            {% include "partials/footer.html" %} {% include "partials/preloader.html" %}
+
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script src="js/app.js"></script>
         </div>

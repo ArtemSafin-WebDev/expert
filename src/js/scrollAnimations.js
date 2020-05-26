@@ -13,25 +13,27 @@ export default function() {
     const pageFooter = document.querySelector('.page-footer');
     const controller = new ScrollMagic.Controller();
     const faq = document.querySelector('.faq');
+    const bgImage = document.querySelector('.fullheight-bg');
+    const bgImageOverlay = document.querySelector('.fullheight-bg__overlay');
 
     if (types) {
         const introText = types.querySelector('.types__intro-text');
         const introTextWrapper = types.querySelector('.types__intro-text-wrapper');
         const pageHeader = document.querySelector('.page-header');
-        const bgImage = types.querySelector('.fullheight-bg');
+
         const tl = gsap.timeline();
 
         gsap.set(introTextWrapper, {
             minHeight: introText.offsetHeight
         });
-        gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top, width: '100%' });
+        gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top + window.pageYOffset, width: '100%' });
         gsap.set(bgImage, { position: 'fixed' });
 
         let resizeTimer = null;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top, width: '100%' });
+                gsap.set(introText, { transformOrigin: 'center', position: 'fixed', left: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top + window.pageYOffset, width: '100%' });
             }, 250);
         });
 
@@ -53,9 +55,9 @@ export default function() {
         const bgTl = gsap.timeline();
 
         bgTl.to(
-            bgImage,
+            bgImageOverlay,
             {
-                filter: 'blur(18px)',
+                opacity: .5,
                 duration: 1,
                 ease: 'none'
             },
