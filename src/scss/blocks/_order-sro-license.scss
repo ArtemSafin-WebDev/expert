@@ -1,0 +1,308 @@
+.order-sro-license {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 5.5rem;
+    @include breakpoint(mobile) {
+        margin-bottom: 2.2rem;
+    }
+}
+
+.order-sro-license__intro-text-wrapper {
+    margin-top: 30rem;
+    position: relative;
+    z-index: -1;
+    @include breakpoint(large-desktop) {
+        margin-top: 27rem;
+    }
+
+    @include breakpoint(mobile) {
+        margin-top: 12rem;
+    }
+}
+
+.order-sro-license__content {
+    margin-top: 11rem;
+    background-color: #fff;
+    color: var(--text-color);
+    @include breakpoint(mobile) {
+        margin-top: 6.8rem;
+    }
+}
+
+.order-sro-license__row {
+    display: flex;
+
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.order-sro-license__left-col {
+    flex-basis: 30%;
+    flex-grow: 1;
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        flex-basis: auto;
+    }
+}
+
+.order-sro-license__right-col {
+    flex-basis: 70.2rem;
+    flex-shrink: 0;
+    @include breakpoint(mobile) {
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+}
+
+.order-sro-license__left-col,
+.order-sro-license__right-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-sro-license__consultation,
+.order-sro-license__form {
+    padding: 5.5rem;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+        padding-left: 3rem;
+       
+    }
+}
+
+.order-sro-license__form {
+    background: #f2f4fa;
+    color: var(--text-color);
+    display: flex;
+
+    @include breakpoint(tablet) {
+        flex-direction: column;
+    }
+
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+        padding-bottom: 3rem;
+    }
+}
+
+.order-sro-license__form-heading {
+    width: 30rem;
+    flex-shrink: 0;
+    margin-right: 5rem;
+    font-weight: 900;
+    font-size: 3.2rem;
+    line-height: 3.8rem;
+    @include breakpoint(tablet) {
+        width: auto;
+        margin-bottom: 3rem;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.order-sro-license__form-fields {
+    width: 50%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(tablet) {
+        width: 100%;
+    }
+}
+
+.order-sro-license__form-row {
+    margin-bottom: 2.2rem;
+    &:first-child {
+        .order-sro-license__form-input {
+            padding-top: 1.3rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 1.5rem;
+        &:first-child {
+            .order-sro-license__form-input {
+                padding-top: 1.8rem;
+            }
+        }
+    }
+}
+
+.order-sro-license__form-input {
+    font: inherit;
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(#54595d, 0.3);
+    color: var(--text-color);
+    @include placeholder {
+        color: rgba(black, 0.7);
+        text-transform: uppercase;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        color: var(--text-color);
+        padding: 1.8rem 0;
+        padding-right: 3rem;
+    }
+}
+
+.order-sro-license__form-submit {
+    margin-top: 3rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+    color: white;
+    padding: 2.2rem;
+    background-color: var(--primary-color);
+    align-self: flex-end;
+
+    transition: background-color 0.2s;
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--text-color);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 2rem;
+        align-self: flex-start;
+        margin-top: 1.5rem;
+    }
+}
+
+.order-sro-license__form-submit-content {
+    display: flex;
+    align-items: center;
+    &::after {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background-color: #fff;
+        border-radius: 50%;
+        flex-shrink: 0;
+        margin-left: 9rem;
+        vertical-align: middle;
+        @include breakpoint(mobile) {
+            margin-left: 5rem;
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        justify-content: space-between;
+    }
+}
+
+.order-sro-license__consultation {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+
+    @include breakpoint(mobile) {
+        flex-grow: 0;
+        padding-top: 2.5rem;
+    }
+}
+
+.order-sro-license__consultation-content {
+    max-width: 28rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    @include breakpoint(mobile) {
+        max-width: none;
+        padding-right: 4rem;
+    }
+}
+
+.order-sro-license__consultation-specialist-name {
+    font-weight: 900;
+    font-size: 2.3rem;
+    line-height: 2.7rem;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint(mobile) {
+        font-size: 1.8rem;
+        line-height: 2.1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.order-sro-license__consultation-specialist-text {
+    font-size: 1.4rem;
+    line-height: 1.7rem;
+    margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+}
+
+.order-sro-license__consultation-link {
+    color: var(--primary-color);
+    margin-top: auto;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: 0.1em;
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    align-self: flex-start;
+    transition: color 0.2s;
+    &:link,
+    &:visited {
+        color: var(--primary-color);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--text-color);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-bottom: 2rem;
+    }
+}
+
+.order-sro-license__consultation-image {
+    position: absolute;
+    right: 0.6rem;
+    bottom: 0;
+    width: 46rem;
+    height: auto;
+    @include objectFitContainBottom();
+
+
+    @include breakpoint(mobile) {
+        position: static;
+        width: 60%;
+        height: auto;
+        right: auto;
+        bottom: auto;
+        margin-left: auto;
+        margin-top: -4rem;
+    }
+}

@@ -41,6 +41,7 @@
 
 .types__intro-text-wrapper {
     margin-top: 30rem;
+    
     @include breakpoint(large-desktop) {
         margin-top: 27rem;
     }

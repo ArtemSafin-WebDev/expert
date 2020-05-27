@@ -1,0 +1,105 @@
+.description {
+    position: relative;
+    z-index: 1;
+}
+
+.description__content {
+    padding-top: 13rem;
+    padding-bottom: 13rem;
+    background-color: #f2f4fa;
+
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.description__heading {
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    margin-bottom: 6rem;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 3rem;
+    }
+}
+
+.description__items {
+    display: flex;
+    flex-wrap: wrap;
+    @include breakpoint(mobile) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+}
+
+.description__item {
+    width: 33.33%;
+
+    @include breakpoint(mobile) {
+        width: 100%;
+        margin-bottom: 3rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.description__card-title {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #b9c1ca;
+
+    @include breakpoint(mobile) {
+        padding-bottom: 1.5rem;
+    }
+}
+
+.description__card-list {
+    padding-top: 4rem;
+    padding-right: 6rem;
+    @include breakpoint(mobile) {
+        padding-top: 1.5rem;
+        padding-right: 3rem;
+    }
+}
+
+.description__card-list-item {
+    margin-bottom: 1.8rem;
+    padding-left: 2.4rem;
+    position: relative;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    &::before {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        position: absolute;
+        left: 0;
+        background-color: var(--text-color);
+        top: 0.65rem;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+        padding-left: 1.6rem;
+        &::before {
+            content: '';
+            width: 0.7rem;
+            height: 0.7rem;
+            top: .35rem;
+        }
+    }
+}

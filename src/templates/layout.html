@@ -19,11 +19,17 @@
             {% include "sprite.njk" %}
         </div>
         <a href="index.html" class="sidelogo">
-            <img src="img/Union.svg" alt="" class="sidelogo__image">
+            <img src="img/Union.svg" alt="" class="sidelogo__image" />
         </a>
-      
+
         <div class="fullheight-bg">
+            {% if activePage == "Index" %}
             <img src="img/top-bg.jpg" alt="" class="fullheight-bg__image" />
+
+            {% elif activePage == "SRO" %}
+            <img src="img/top-bg-sro.jpg" alt="" class="fullheight-bg__image" />
+            {% endif %}
+
             <span class="fullheight-bg__overlay"></span>
         </div>
         <div class="page-content">

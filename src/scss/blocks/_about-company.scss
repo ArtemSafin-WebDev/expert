@@ -115,6 +115,8 @@
         margin-right: 0.5rem;
         vertical-align: middle;
         border-radius: 50%;
+
+       
     }
 
     @include breakpoint(mobile) {
@@ -127,6 +129,7 @@
             width: 0.7rem;
             height: 0.7rem;
             margin-right: 0.4rem;
+            margin-bottom: 0.2em;
         }
     }
 }

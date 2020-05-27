@@ -11,7 +11,6 @@
     padding-top: 5.2rem;
     display: flex;
     align-items: flex-start;
-   
 
     @include breakpointMF(small-tablet) {
         animation-name: slide-down;
@@ -112,7 +111,7 @@
     line-height: 1.5rem;
     display: block;
     margin-bottom: 1.5rem;
-    transition: color .2s;
+    transition: color 0.2s;
     &:last-child {
         margin-bottom: 0;
     }
@@ -131,6 +130,49 @@
     margin-right: 5rem;
     &:last-child {
         margin-right: 0;
+    }
+
+    &.active {
+        .page-header__nav-link {
+            pointer-events: none;
+            cursor: default;
+            opacity: 1;
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 100%;
+                width: 100%;
+                height: 0.3rem;
+                background-color: #fff;
+                margin-top: 2.5rem;
+                z-index: 30;
+                pointer-events: none;
+
+                @include breakpoint(mobile) {
+                    display: none;
+                }
+            }
+
+            .no-touch &:hover,
+            .touch &:active {
+                color: white;
+                opacity: 1;
+            }
+
+            @include breakpoint(mobile) {
+                color: var(--primary-color);
+                .no-touch &:hover,
+                .touch &:active {
+                    color: var(--primary-color);
+                }
+            }
+        }
+        // & ~ * {
+        //     .page-header__nav-link {
+        //         opacity: 0.7;
+        //     }
+        // }
     }
 
     @include breakpoint(large-desktop) {
@@ -157,7 +199,10 @@
     line-height: 1.4rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    transition: color 0.2s;
+    transition: color 0.2s, opacity 0.2s;
+    position: relative;
+    display: block;
+    opacity: 0.7;
     &:link,
     &:visited {
         color: white;
@@ -165,7 +210,8 @@
 
     .no-touch &:hover,
     .touch &:active {
-        color: var(--primary-color);
+        color: white;
+        opacity: 1;
     }
 
     @include breakpoint(mobile) {
@@ -174,9 +220,16 @@
         font-family: inherit;
         text-transform: none;
         letter-spacing: 0;
+        opacity: 1;
         &:link,
         &:visited {
             color: var(--text-color);
+        }
+
+        .no-touch &:hover,
+        .touch &:active {
+            color: var(--primary-color);
+            opacity: 1;
         }
     }
 }
@@ -336,11 +389,11 @@
         visibility: hidden;
         transition: opacity 0.4s, visibility 0s linear 0.4s;
         padding-top: 9.4rem;
-        
+
         .burger-menu-open & {
             opacity: 1;
             visibility: visible;
-            transition: all .4s;
+            transition: all 0.4s;
         }
     }
 }
@@ -369,7 +422,6 @@
     @include breakpoint(mobile) {
         display: block;
     }
-
 
     .no-touch &:hover {
         .page-header__burger-content > span {
