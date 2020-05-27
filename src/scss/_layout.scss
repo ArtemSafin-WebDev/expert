@@ -1,6 +1,6 @@
 .container {
     width: 100%;
-    max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px) * 2));
+    max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px)));
     margin-left: auto;
     padding-left: var(--content-padding);
 

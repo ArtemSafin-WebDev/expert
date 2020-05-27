@@ -621,13 +621,16 @@ button.swiper-pagination-bullet {
   padding: 0; }
 
 :root {
-  --max-container-width: 153rem;
-  --content-padding: 8rem;
+  --max-container-width: 156rem;
+  --content-padding: 12rem;
   --primary-color: #ED1C24;
   --helios-ext: 'HeliosExtC', sans-serif;
   --helios: 'HeliosC', sans-serif;
   --segoe: 'Segoe Script', sans-serif;
   --text-color: #242020; }
+  @media only screen and (max-width: 1400px) {
+    :root {
+      --content-padding: 8rem; } }
   @media only screen and (max-width: 968px) {
     :root {
       --content-padding: 4rem; } }
@@ -844,7 +847,7 @@ img.lazyload:not([src]) {
 
 .container {
   width: 100%;
-  max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px) * 2));
+  max-width: calc(var(--max-container-width, 1200px) + (var(--content-padding, 20px)));
   margin-left: auto;
   padding-left: var(--content-padding); }
   .container--flex {

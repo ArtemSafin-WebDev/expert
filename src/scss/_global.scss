@@ -7,13 +7,20 @@
 }
 
 :root {
-    --max-container-width: 153rem;
-    --content-padding: 8rem;
+    --max-container-width: 156rem;
+    
+    --content-padding: 12rem;
+    // --content-padding: 8rem;
     --primary-color: #ED1C24;
     --helios-ext: 'HeliosExtC', sans-serif;
     --helios: 'HeliosC', sans-serif;
     --segoe: 'Segoe Script', sans-serif;
     --text-color: #242020;
+
+
+    @include breakpoint(desktop) {
+        --content-padding: 8rem;
+    }
 
     @include breakpoint(small-tablet) {
         --content-padding: 4rem;

@@ -12,15 +12,16 @@ export default function() {
     const apply = document.querySelector('.how-to-apply');
     const pageFooter = document.querySelector('.page-footer');
     const controller = new ScrollMagic.Controller();
-    const faq = document.querySelector('.faq');
+  
     const bgImage = document.querySelector('.fullheight-bg');
     const bgImageOverlay = document.querySelector('.fullheight-bg__overlay');
     const sidelogo = document.querySelector('.sidelogo');
     const container = document.querySelector('.container');
+ 
     if (types) {
-        const introText = types.querySelector('.types__intro-text');
-        const introTextWrapper = types.querySelector('.types__intro-text-wrapper');
-        const pageHeader = document.querySelector('.page-header');
+        const introText = types.querySelector('.js-intro-text');
+        const introTextWrapper = types.querySelector('.js-intro-text-wrapper');
+      
 
         const tl = gsap.timeline();
 
