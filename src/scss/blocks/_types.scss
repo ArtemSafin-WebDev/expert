@@ -55,7 +55,7 @@
     @include breakpointMF(small-tablet) {
         display: flex;
 
-        animation-name: slide-up;
+        animation-name: slide-up-fade;
         animation-play-state: paused;
         animation-duration: 0.6s;
         animation-timing-function: ease-out;

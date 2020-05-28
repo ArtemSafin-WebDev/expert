@@ -1,0 +1,92 @@
+<div class="callback js-callback-modal">
+   
+    <div class="callback__inner">
+      
+        <div class="container">
+         
+            <div class="callback__top-row">
+                <div class="callback__logo">
+                    <img src="img/logo.svg" alt="" class="callback__logo-image" />
+                </div>
+
+                <button class="callback__close-btn js-close-callback-modal">
+                    <span class="callback__close-btn-content">
+                        <svg width="24" height="24" aria-hidden="true" class="icon-cross">
+                            <use xlink:href="#cross" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+            <div class="callback__layers">
+               
+                <div class="callback__layer js-callback-form-layer active">
+                    <div class="callback__content">
+                        <h3 class="callback__heading">
+                            Заказать звонок
+                        </h3>
+                        <div class="callback__text">
+                            12 лет, опытная команда и 5000 довольных клиентов по всей России
+                        </div>
+                        <form action="/" method="POST" class="callback__form js-callback-form" data-parsley-validate>
+                            <div class="callback__form-content">
+                                <div class="callback__form-row">
+                                    <div class="callback__form-col">
+                                        <div class="callback__form-input-row">
+                                            <input type="text" name="name" class="callback__form-input" required placeholder="Имя" />
+                                        </div>
+                                        <div class="callback__form-input-row">
+                                            <input type="tel" name="phone" class="callback__form-input js-phone-input" required data-parsley-phone placeholder="Номер телефона" />
+                                        </div>
+                                        <div class="callback__form-input-row">
+                                            <input type="email" name="email" class="callback__form-input" required placeholder="Электронная почта" />
+                                        </div>
+                                    </div>
+                                    <div class="callback__form-col">
+                                        <div class="callback__form-input-row">
+                                            <input type="text" name="name" class="callback__form-input" required placeholder="Имя" />
+                                        </div>
+                                        <div class="callback__form-input-row">
+                                            <input type="tel" name="phone" class="callback__form-input js-phone-input" required data-parsley-phone placeholder="Номер телефона" />
+                                        </div>
+                                        <div class="callback__form-input-row">
+                                            <input type="email" name="email" class="callback__form-input" required placeholder="Электронная почта" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="callback__form-submit">
+                                <span class="callback__form-submit-content">
+                                    Отправить
+                                </span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="callback__layer js-callback-success-layer">
+                    <div class="callback__ok-image">
+                        <img src="img/ok.png" alt="">
+                    </div>
+
+                 
+                    <div class="callback__content">
+                        <h3 class="callback__heading">
+                            Спасибо! Мы с вами свяжемся
+                        </h3>
+                        <div class="callback__text">
+                            12 лет, опытная команда и 5000 довольных клиентов по всей России
+                        </div>
+                        <div class="callback__btns">
+                            <a href="#" class="callback__btn-reset-form js-callback-reset">
+                                Создать новую заявку
+                            </a>
+                            <a href="#" class="callback__btn-exit js-callback-exit">
+                                Вернуться на главную
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

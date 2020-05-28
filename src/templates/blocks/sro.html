@@ -16,7 +16,7 @@
         <div class="order-sro-license__content">
             <div class="order-sro-license__row">
                 <div class="order-sro-license__left-col">
-                    <form action="/" method="POST" class="order-sro-license__form">
+                    <form action="/" method="POST" class="order-sro-license__form" data-parsley-validate>
                         <h3 class="order-sro-license__form-heading">
                             Заказать допуск СРО
                         </h3>
@@ -25,7 +25,7 @@
                                 <input type="text" name="name" class="order-sro-license__form-input" required placeholder="Имя" />
                             </div>
                             <div class="order-sro-license__form-row">
-                                <input type="tel" name="phone" class="order-sro-license__form-input" required placeholder="Номер телефона" />
+                                <input type="tel" name="phone" class="order-sro-license__form-input js-phone-input" required data-parsley-phone placeholder="Номер телефона" />
                             </div>
                             <div class="order-sro-license__form-row">
                                 <input type="email" name="email" class="order-sro-license__form-input" required placeholder="Электронная почта" />

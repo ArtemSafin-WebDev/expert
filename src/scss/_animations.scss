@@ -8,6 +8,18 @@
     }
 }
 
+@keyframes slide-up-fade {
+    from {
+        opacity: 0;
+        transform: translateZ(0) translateY(100%);
+    }
+
+    to {
+        transform: translateZ(0) translateY(0%);
+        opacity: 1;
+    }
+}
+
 @keyframes slide-down {
     from {
         transform: translateZ(0) translateY(-100%);

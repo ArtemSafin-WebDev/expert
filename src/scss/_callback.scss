@@ -1,0 +1,437 @@
+.callback {
+    background: #bc1319;
+    color: white;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 340;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+
+    .callback-form-shown & {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s;
+    }
+}
+
+.callback__inner {
+    height: 100%;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    padding-right: 15rem;
+    .container {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        flex-shrink: 0;
+    }
+
+    @include breakpoint(mobile) {
+        padding-right: var(--content-padding);
+    }
+}
+
+.callback__top-row {
+    padding-top: 5.2rem;
+    display: flex;
+    align-items: flex-start;
+    @include breakpoint(mobile) {
+        padding-top: 2rem;
+    }
+}
+
+.callback__content {
+    padding: 2rem 0;
+    @include breakpoint(mobile) {
+        padding: 0;
+    }
+}
+
+.callback__logo {
+    margin-right: auto;
+}
+
+.callback__logo-image {
+    display: block;
+    width: 17.2rem;
+    height: auto;
+
+    @include breakpoint(mobile) {
+        width: 10.2rem;
+    }
+}
+
+.callback__close-btn {
+    width: 6.2rem;
+    height: 6.2rem;
+    flex-shrink: 0;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+    position: absolute;
+    right: 5rem;
+    top: 4rem;
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--text-color);
+
+        .callback__close-btn-content svg {
+            fill: white;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        right: 2rem;
+        top: 2rem;
+        width: 4rem;
+        height: 4rem;
+    }
+}
+
+.callback__close-btn-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 2.4rem;
+        height: 2.4rem;
+        flex-shrink: 0;
+        fill: var(--text-color);
+        transition: fill 0.2s;
+
+        @include breakpoint(mobile) {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+}
+
+.callback__content {
+    margin: auto 0;
+}
+
+.callback__heading {
+    font-weight: 900;
+    font-size: 4.8rem;
+    line-height: 5.7rem;
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    max-width: 82rem;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+
+        margin-bottom: 2rem;
+    }
+}
+
+.callback__text {
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    max-width: 53rem;
+    @include breakpoint(mobile) {
+        max-width: none;
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+}
+
+.callback__form {
+    margin-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        margin-top: 4rem;
+    }
+}
+
+.callback__form-row {
+    margin: -3rem -6.5rem;
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        margin: 0;
+    }
+}
+
+.callback__form-col {
+    width: 50%;
+    padding: 3rem 6.5rem;
+    display: flex;
+    flex-direction: column;
+    @include breakpoint(mobile) {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.callback__form-input-row {
+    margin-bottom: 3rem;
+    position: relative;
+
+    .parsley-errors-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+
+        @include breakpoint(mobile) {
+            position: static;
+        }
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+    }
+}
+
+.callback__form-input {
+    font: inherit;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    color: white;
+    width: 100%;
+    border-bottom: 1px solid rgba(white, 0.7);
+    padding: 2rem 0;
+    transition: border-color 0.2s;
+    &:focus {
+        border-color: white;
+    }
+    @include placeholder {
+        color: rgba(white, 0.7);
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        padding: 1.8rem 0;
+        padding-right: 3rem;
+    }
+}
+
+.callback__form-submit {
+    background-color: #fff;
+
+    padding: 2.5rem 2.2rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+    margin-top: 7.5rem;
+    align-self: flex-end;
+    transition: background-color 0.2s, color 0.2s;
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--text-color);
+        color: white;
+
+        .callback__form-submit-content::after {
+            background-color: white;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        padding: 2rem;
+        font-size: 1rem;
+        line-height: 1.2rem;
+        margin-right: var(--content-padding);
+        margin-top: 4rem;
+    }
+}
+
+.callback__form-submit-content {
+    display: flex;
+    align-items: center;
+
+    &::after {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        background-color: var(--text-color);
+        border-radius: 50%;
+        margin-left: 5rem;
+        flex-shrink: 0;
+        transition: background-color 0.2s;
+
+        @include breakpoint(mobile) {
+            width: 0.8rem;
+            height: 0.8rem;
+            margin-left: 5rem;
+        }
+    }
+}
+
+.callback__layers {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.callback__layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    min-height: 100%;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    &.active {
+        position: relative;
+        z-index: 10;
+        opacity: 1;
+        visibility: inherit;
+        transition: all 0.3s;
+    }
+}
+
+.callback__btns {
+    display: flex;
+    align-items: center;
+    margin-top: 9rem;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+        align-items: inherit;
+        margin-top: 4rem;
+    }
+}
+
+.callback__btn-reset-form {
+    font-weight: 900;
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+    margin-right: 4.5rem;
+    padding: 2.2rem 2rem;
+    background-color: #fff;
+    color: var(--text-color);
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.2s;
+    align-self: flex-start;
+    &::after {
+        content: '';
+        width: 1rem;
+        height: 1rem;
+        flex-shrink: 0;
+        margin-left: 2rem;
+        background-color: var(--text-color);
+        border-radius: 50%;
+        transition: background-color 0.2s;
+        @include breakpoint(mobile) {
+            margin-left: 2rem;
+            width: 0.8rem;
+            height: 0.8rem;
+        }
+    }
+    &:link,
+    &:visited {
+        color: var(--text-color);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--text-color);
+        color: white;
+        &::after {
+            background-color: white;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2rem;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.callback__btn-exit {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+
+    text-decoration-line: underline;
+    text-transform: uppercase;
+    transition: color 0.2s;
+    color: white;
+    &:link,
+    &:visited {
+        color: white;
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        text-decoration: none;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+}
+
+.callback__ok-image {
+    position: absolute;
+    right: -4rem;
+    top: 50%;
+    width: 68rem;
+
+    transform: translateY(-50%);
+    pointer-events: none;
+    z-index: -1;
+
+    img {
+        width: 100%;
+        height: auto;
+        @include objectFitContain();
+        opacity: 0.5;
+    }
+
+
+    @include breakpoint(mobile) {
+        left: 50%;
+        right: auto;
+        top: 2rem;
+        width: 80%;
+        transform: translateX(-50%);
+
+
+
+        position: static;
+        transform: none;
+        margin: 0 auto;
+        margin-bottom: 3rem;
+        margin-top: 5rem;
+
+        & ~ .callback__content {
+            margin: 0;
+        }
+    }
+}

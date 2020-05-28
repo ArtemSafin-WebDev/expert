@@ -212,6 +212,17 @@ img.lazyload:not([src]) {
     }
 }
 
+
+.parsley-errors-list {
+    font: inherit;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+}
+
 ::selection {
     color: white;
     background-color: var(--primary-color);

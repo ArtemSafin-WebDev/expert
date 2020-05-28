@@ -17,15 +17,15 @@
                     <h3 class="page-footer__form-card-heading">
                         Заказать звонок
                     </h3>
-                    <form action="/" method="POST" class="page-footer__form-card-form">
+                    <form action="/" method="POST" class="page-footer__form-card-form" data-parsley-validate>
                         <div class="page-footer__form-card-form-row">
-                            <input type="text" name="name" class="page-footer__form-card-form-input" placeholder="Имя" />
+                            <input type="text" name="name" class="page-footer__form-card-form-input" placeholder="Имя" required />
                         </div>
                         <div class="page-footer__form-card-form-row">
-                            <input type="tel" name="phone" class="page-footer__form-card-form-input" placeholder="Номер телефона" />
+                            <input type="tel" name="phone" class="page-footer__form-card-form-input js-phone-input" required data-parsley-phone placeholder="Номер телефона" />
                         </div>
                         <div class="page-footer__form-card-form-row">
-                            <input type="email" name="email" class="page-footer__form-card-form-input" placeholder="Электронная почта" />
+                            <input type="email" name="email" class="page-footer__form-card-form-input" placeholder="Электронная почта" required/>
                         </div>
                         <button type="submit" class="page-footer__form-card-form-submit">
                             Заказать звонок

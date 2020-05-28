@@ -11,6 +11,8 @@ import stickyElements from './stickyElements';
 import typesSlider from './typesSlider';
 import burgerMenu from './burgerMenu';
 import scrollAnimations from './scrollAnimations';
+import callbackModal from './callbackForm';
+import formValidation from './formValidation';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -26,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function() {
     typesSlider();
     burgerMenu();
     scrollAnimations();
+    callbackModal();
+    formValidation();
 });
 
 window.addEventListener('load', function() {

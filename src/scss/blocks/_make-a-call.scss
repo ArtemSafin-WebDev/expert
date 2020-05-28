@@ -65,6 +65,18 @@
 
 .make-a-call__form-row {
     margin-bottom: 3rem;
+    position: relative;
+    .parsley-errors-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+       
+        @include breakpoint(mobile) {
+            position: static;
+            
+        }
+    }
     @include breakpoint(mobile) {
         margin-bottom: 1.5rem;
     }

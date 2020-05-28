@@ -132,6 +132,18 @@
 
 .page-footer__form-card-form-row {
     margin-bottom: 2.2rem;
+    position: relative;
+    .parsley-errors-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        font-size: 1rem;
+        margin-top: .5rem;
+        @include breakpoint(mobile) {
+            position: static;
+        }
+    }
     @include breakpoint(mobile) {
         margin-bottom: 2rem;
     }

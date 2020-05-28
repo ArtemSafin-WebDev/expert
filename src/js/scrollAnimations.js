@@ -1,20 +1,39 @@
 import * as ScrollMagic from 'scrollmagic';
 import { gsap } from 'gsap';
 import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
-import detectIt from 'detect-it';
 
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 export default function() {
-    if (window.matchMedia('(max-width: 767px)').matches) return;
+    const controller = new ScrollMagic.Controller();
+    const bgImage = document.querySelector('.fullheight-bg');
+    const bgImageOverlay = document.querySelector('.fullheight-bg__overlay');
+
+    const bgTl = gsap.timeline();
+
+    bgTl.to(
+        bgImageOverlay,
+        {
+            opacity: 1,
+            duration: 1,
+            ease: 'none'
+        },
+        0
+    );
+    new ScrollMagic.Scene({
+        triggerElement: types,
+        triggerHook: 0,
+        duration: '35%'
+    })
+        .setTween(bgTl)
+        .addTo(controller);
+
+    if (window.matchMedia('(max-width: 1024px)').matches) return;
 
     const types = document.querySelector('.types');
     const apply = document.querySelector('.how-to-apply');
     const pageFooter = document.querySelector('.page-footer');
-    const controller = new ScrollMagic.Controller();
 
-    const bgImage = document.querySelector('.fullheight-bg');
-    const bgImageOverlay = document.querySelector('.fullheight-bg__overlay');
     const sidelogo = document.querySelector('.sidelogo');
     const container = document.querySelector('.container');
 
@@ -74,25 +93,6 @@ export default function() {
         .setTween(tl)
         .addTo(controller);
 
-    const bgTl = gsap.timeline();
-
-    bgTl.to(
-        bgImageOverlay,
-        {
-            opacity: 1,
-            duration: 1,
-            ease: 'none'
-        },
-        0
-    );
-    new ScrollMagic.Scene({
-        triggerElement: types,
-        triggerHook: 0,
-        duration: '35%'
-    })
-        .setTween(bgTl)
-        .addTo(controller);
-
     if (apply) {
         const redLabelCircle = apply.querySelector('.how-to-apply__red-label-circle');
         const tl = gsap.timeline();
@@ -112,7 +112,13 @@ export default function() {
             .addTo(controller);
     }
 
-    if (pageFooter) {
+    console.log({
+        documentHeight: document.documentElement.clientHeight,
+        pageFooterHeight: pageFooter.offsetHeight * 0.9,
+        windowHeight: window.innerHeight
+    })
+
+    if (pageFooter && (document.documentElement.clientHeight >= pageFooter.offsetHeight * 0.9)) {
         const tl = gsap.timeline();
 
         gsap.set(pageFooter, {

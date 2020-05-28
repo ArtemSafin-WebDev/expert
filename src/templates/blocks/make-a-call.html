@@ -11,12 +11,12 @@
                     </p>
                 </div>
                 <div class="make-a-call__row">
-                    <form action="/" method="POST" class="make-a-call__form" autocomplete="off">
+                    <form action="/" method="POST" class="make-a-call__form" autocomplete="off" data-parsley-validate>
                         <div class="make-a-call__form-row">
                             <input type="text" class="make-a-call__form-input" name="name" required placeholder="Имя" />
                         </div>
                         <div class="make-a-call__form-row">
-                            <input type="tel" class="make-a-call__form-input" name="name" required placeholder="Номер телефона" />
+                            <input type="tel" class="make-a-call__form-input" name="name" required data-parsley-phone placeholder="Номер телефона" />
                         </div>
                         <div class="make-a-call__form-row">
                             <input type="email" class="make-a-call__form-input" name="name" required placeholder="Электронная почта" />

@@ -136,6 +136,19 @@
 
 .order-sro-license__form-row {
     margin-bottom: 2.2rem;
+    position: relative;
+    .parsley-errors-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 0.5rem;
+        @include breakpoint(mobile) {
+            position: static;
+            
+        }
+    }
     &:first-child {
         .order-sro-license__form-input {
             padding-top: 1.3rem;

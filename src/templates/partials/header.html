@@ -5,12 +5,14 @@
                 <img src="img/logo.svg" alt="" class="page-header__logo page-header__logo--white" width="172" />
                 <img src="img/logo-red.svg" alt="" class="page-header__logo page-header__logo--red" width="172" />
             </a>
+           
+            
             <div class="page-header__burger-menu">
                 <div class="page-header__burger-menu-inner-wrapper">
                     <nav class="page-header__nav">
                         <ul class="page-header__nav-list">
                             <li class="page-header__nav-list-item {% if activePage == "SRO" %} active {% endif %}">
-                                <a href="#" class="page-header__nav-link">
+                                <a href="sro.html" class="page-header__nav-link">
                                     СРО cтроителей
                                 </a>
                             </li>
@@ -58,7 +60,7 @@
             </button>
         </div>
     </div>
-    <a href="#" class="page-header__write-us js-sticky-element" data-margin-top="40" data-sticky-wrap="true">
+    <a href="#" class="page-header__write-us js-sticky-element js-open-callback-modal" data-margin-top="40" data-sticky-wrap="true">
         <svg width="22" height="22" aria-hidden="true" class="icon-bubble">
             <use xlink:href="#bubble" />
         </svg>

@@ -25,6 +25,7 @@
     "lazysizes": "^5.2.0",
     "moment": "^2.24.0",
     "object-fit-images": "^3.2.4",
+    "parsleyjs": "^2.9.2",
     "picturefill": "^3.0.3",
     "scrollmagic": "^2.0.7",
     "scrollmagic-plugin-gsap": "^1.0.4",
