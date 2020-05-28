@@ -2295,6 +2295,11 @@ img.lazyload:not([src]) {
   background-position: right top;
   background-size: auto 44.2rem;
   background-repeat: no-repeat; }
+  .advantages--ending .advantages__content {
+    padding-bottom: 13rem; }
+    @media only screen and (max-width: 767px) {
+      .advantages--ending .advantages__content {
+        padding-bottom: 4rem; } }
   @media only screen and (max-width: 767px) {
     .advantages__content {
       padding-top: 4rem;
@@ -2424,6 +2429,11 @@ img.lazyload:not([src]) {
   background-color: #f2f4fa;
   padding-top: 6rem;
   padding-bottom: 4rem; }
+  .how-to-apply--start .how-to-apply__content {
+    padding-top: 13rem; }
+    @media only screen and (max-width: 767px) {
+      .how-to-apply--start .how-to-apply__content {
+        padding-top: 4rem; } }
   @media only screen and (max-width: 767px) {
     .how-to-apply__content {
       padding-top: 2rem;
@@ -4507,6 +4517,8 @@ img.lazyload:not([src]) {
   width: 100%;
   padding: 4rem 0;
   border-top: 1px solid #b9c1ca; }
+  .faq__accordeon-btn:link, .faq__accordeon-btn:visited {
+    color: var(--text-color); }
   .faq__accordeon-btn svg {
     width: 2.6rem;
     height: 2.6rem;
@@ -4894,7 +4906,7 @@ img.lazyload:not([src]) {
     .order-sro-license__consultation-specialist-name {
       font-size: 1.8rem;
       line-height: 2.1rem;
-      margin-bottom: 2rem; } }
+      margin-bottom: 1.2rem; } }
 
 .order-sro-license__consultation-specialist-text {
   font-size: 1.4rem;
@@ -5129,6 +5141,7 @@ img.lazyload:not([src]) {
   @media only screen and (max-width: 767px) {
     .requirements__card-heading {
       padding-right: 3rem;
+      width: 100%;
       font-size: 1.8rem;
       line-height: 2.1rem;
       margin-bottom: 2rem; } }
@@ -5355,7 +5368,7 @@ img.lazyload:not([src]) {
       padding-top: 4rem; }
       @media only screen and (max-width: 767px) {
         .requirements__price-table table tr:first-child td {
-          padding-top: 3rem; } }
+          padding-top: 2rem; } }
     .requirements__price-table table tr:nth-last-child(2) td {
       padding-bottom: 4rem; }
       @media only screen and (max-width: 767px) {
@@ -5366,6 +5379,8 @@ img.lazyload:not([src]) {
       line-height: 2.3rem;
       padding-right: 2rem;
       padding-bottom: 3rem; }
+      .requirements__price-table table td:nth-child(2) {
+        white-space: nowrap; }
       @media only screen and (max-width: 767px) {
         .requirements__price-table table td {
           font-size: 1.2rem;
@@ -5491,3 +5506,220 @@ img.lazyload:not([src]) {
       line-height: 1.4rem;
       margin-bottom: 1.5rem;
       padding-left: 4rem; } }
+
+.make-a-call {
+  position: relative;
+  z-index: 1; }
+
+.make-a-call__content {
+  color: white;
+  padding-top: 14rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__content {
+      padding-top: 6rem; } }
+
+.make-a-call__heading {
+  font-weight: 900;
+  font-size: 3.2rem;
+  line-height: 3.8rem;
+  margin-bottom: 3rem;
+  max-width: 52rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__heading {
+      max-width: none;
+      font-size: 2.6rem;
+      line-height: 3.1rem;
+      margin-bottom: 2rem;
+      padding-right: 2rem; } }
+
+.make-a-call__intro-text {
+  font-size: 1.9rem;
+  line-height: 2.3rem;
+  max-width: 52rem;
+  margin-bottom: 7rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__intro-text {
+      max-width: none;
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      margin-bottom: 4rem;
+      padding-right: 2rem; } }
+
+.make-a-call__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
+
+.make-a-call__form {
+  width: 40%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 12rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__form {
+      width: 100%;
+      -webkit-box-flex: 0;
+          -ms-flex-positive: 0;
+              flex-grow: 0;
+      padding-bottom: 4rem; } }
+
+.make-a-call__form-row {
+  margin-bottom: 3rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__form-row {
+      margin-bottom: 1.5rem; } }
+
+.make-a-call__form-input {
+  display: block;
+  width: 100%;
+  padding: 2rem 0;
+  font: inherit;
+  color: white;
+  border-bottom: 1px solid rgba(185, 193, 202, 0.3);
+  -webkit-transition: border-color 0.2s;
+  transition: border-color 0.2s; }
+  .make-a-call__form-input:focus {
+    border-color: white; }
+  .make-a-call__form-input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.7); }
+  .make-a-call__form-input:-moz-placeholder {
+    color: rgba(255, 255, 255, 0.7); }
+  .make-a-call__form-input::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.7); }
+  .make-a-call__form-input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.7); }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__form-input {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      padding: 1.8rem 0;
+      padding-right: 3rem; } }
+
+.make-a-call__form-submit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 2.5rem 2.2rem;
+  font-weight: 900;
+  font-size: 1.2rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  .no-touch .make-a-call__form-submit:hover,
+  .touch .make-a-call__form-submit:active {
+    background-color: var(--text-color); }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__form-submit {
+      padding: 2rem;
+      font-size: 1rem;
+      line-height: 1.2rem;
+      margin-right: var(--content-padding); } }
+
+.make-a-call__form-submit-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .make-a-call__form-submit-content::after {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-color: #fff;
+    border-radius: 50%;
+    margin-left: 10rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
+    @media only screen and (max-width: 767px) {
+      .make-a-call__form-submit-content::after {
+        width: 0.8rem;
+        height: 0.8rem;
+        margin-left: 5rem; } }
+
+.make-a-call__specialist {
+  width: 62rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-left: 12rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__specialist {
+      width: 100%;
+      margin: 0;
+      -ms-flex-negative: 1;
+          flex-shrink: 1; } }
+
+.make-a-call__specialist-info {
+  max-width: 28rem;
+  margin-top: 9rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__specialist-info {
+      margin: 0;
+      max-width: none; } }
+
+.make-a-call__specialist-name {
+  font-weight: 900;
+  font-size: 2.3rem;
+  line-height: 2.7rem;
+  margin-bottom: 1.5rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__specialist-name {
+      font-size: 1.8rem;
+      line-height: 2.1rem;
+      margin-bottom: 1.2rem; } }
+
+.make-a-call__specialist-text {
+  font-size: 1.4rem;
+  line-height: 1.7rem; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__specialist-text {
+      font-size: 1.2rem;
+      line-height: 1.4rem;
+      margin-bottom: 2rem;
+      padding-right: 2rem;
+      max-width: 80%; } }
+
+.make-a-call__specialist-photo {
+  position: absolute;
+  right: -2rem;
+  bottom: 0;
+  width: 47.6rem;
+  height: auto;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: bottom;
+     object-position: bottom;
+  font-family: 'object-fit: contain; object-position: bottom;'; }
+  @media only screen and (max-width: 767px) {
+    .make-a-call__specialist-photo {
+      position: static;
+      margin-left: auto;
+      right: auto;
+      bottom: auto;
+      width: 60%;
+      margin-top: -3rem; } }

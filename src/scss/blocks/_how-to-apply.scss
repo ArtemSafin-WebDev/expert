@@ -3,6 +3,13 @@
     padding-top: 6rem;
     padding-bottom: 4rem;
 
+    .how-to-apply--start & {
+        padding-top: 13rem;
+        @include breakpoint(mobile) {
+            padding-top: 4rem;
+        }
+    }
+
     @include breakpoint(mobile) {
         padding-top: 2rem;
         padding-bottom: 3rem;

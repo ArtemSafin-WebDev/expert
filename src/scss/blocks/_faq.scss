@@ -71,6 +71,11 @@
     // border-top: 1px solid #b9c1ca;
     border-top: 1px solid #b9c1ca;
 
+    &:link,
+    &:visited {
+        color: var(--text-color);
+    }
+
     svg {
         width: 2.6rem;
         height: 2.6rem;

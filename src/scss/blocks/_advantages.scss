@@ -12,6 +12,12 @@
     background-position: right top;
     background-size: auto 44.2rem;
     background-repeat: no-repeat;
+    .advantages--ending & {
+        padding-bottom: 13rem;
+        @include breakpoint(mobile) {
+            padding-bottom: 4rem;
+        }
+    }
     @include breakpoint(mobile) {
         padding-top: 4rem;
         padding-bottom: 4rem;
