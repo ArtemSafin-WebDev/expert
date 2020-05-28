@@ -77,6 +77,14 @@
             }
         }
     }
+
+    @include breakpoint(mobile) {
+        &:last-child {
+            .types__card {
+                border-right: none;
+            }
+        }
+    }
 }
 
 .types__card {
@@ -128,7 +136,8 @@
     @include breakpoint(mobile) {
         min-height: 31rem;
         padding: 2rem;
-        border-right: none;
+        // border-right: none;
+        
         &::before {
             width: 25rem;
             height: 25rem;

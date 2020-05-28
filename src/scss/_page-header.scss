@@ -419,6 +419,8 @@
     margin-right: var(--content-padding);
     position: relative;
     z-index: 320;
+    width: 20px;
+    height: 25px;
     @include breakpoint(mobile) {
         display: block;
     }

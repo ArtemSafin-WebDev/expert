@@ -27,6 +27,20 @@
     margin-top: 11rem;
     background-color: #fff;
     color: var(--text-color);
+
+    @include breakpointMF(small-tablet) {
+      
+
+        animation-name: slide-up;
+        animation-play-state: paused;
+        animation-duration: 0.6s;
+        animation-timing-function: ease-out;
+        animation-fill-mode: both;
+        animation-delay: 0.7s;
+        .animatable & {
+            animation-play-state: running;
+        }
+    }
     @include breakpoint(mobile) {
         margin-top: 6.8rem;
     }

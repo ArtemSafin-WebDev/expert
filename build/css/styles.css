@@ -1325,7 +1325,9 @@ img.lazyload:not([src]) {
   margin-left: auto;
   margin-right: var(--content-padding);
   position: relative;
-  z-index: 320; }
+  z-index: 320;
+  width: 20px;
+  height: 25px; }
   @media only screen and (max-width: 767px) {
     .page-header__burger {
       display: block; } }
@@ -2137,6 +2139,10 @@ img.lazyload:not([src]) {
     .types__list-item:last-child .types__card {
       border-right: none; } }
 
+@media only screen and (max-width: 767px) {
+  .types__list-item:last-child .types__card {
+    border-right: none; } }
+
 .types__card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2188,8 +2194,7 @@ img.lazyload:not([src]) {
   @media only screen and (max-width: 767px) {
     .types__card {
       min-height: 31rem;
-      padding: 2rem;
-      border-right: none; }
+      padding: 2rem; }
       .types__card::before {
         width: 25rem;
         height: 25rem;
@@ -3322,6 +3327,14 @@ img.lazyload:not([src]) {
   padding-bottom: 8rem;
   color: var(--text-color);
   position: relative; }
+  .other-services--standalone .other-services__content {
+    padding: 12rem 0;
+    padding-top: 13.5rem;
+    margin-top: 11rem; }
+    @media only screen and (max-width: 767px) {
+      .other-services--standalone .other-services__content {
+        padding: 4rem 0;
+        margin-top: 4rem; } }
   @media only screen and (max-width: 767px) {
     .other-services__content {
       padding-top: 4rem;
@@ -3569,7 +3582,9 @@ img.lazyload:not([src]) {
   margin-right: 8.2rem; }
   @media only screen and (max-width: 767px) {
     .about-company__left-col {
-      width: 100%; } }
+      width: 100%;
+      padding-top: 3rem;
+      border-top: 1px solid #B9C1CA; } }
 
 .about-company__right-col {
   width: 50%;
@@ -4655,6 +4670,23 @@ img.lazyload:not([src]) {
   margin-top: 11rem;
   background-color: #fff;
   color: var(--text-color); }
+  @media only screen and (min-width: 769px) {
+    .order-sro-license__content {
+      -webkit-animation-name: slide-up;
+              animation-name: slide-up;
+      -webkit-animation-play-state: paused;
+              animation-play-state: paused;
+      -webkit-animation-duration: 0.6s;
+              animation-duration: 0.6s;
+      -webkit-animation-timing-function: ease-out;
+              animation-timing-function: ease-out;
+      -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+      -webkit-animation-delay: 0.7s;
+              animation-delay: 0.7s; }
+      .animatable .order-sro-license__content {
+        -webkit-animation-play-state: running;
+                animation-play-state: running; } }
   @media only screen and (max-width: 767px) {
     .order-sro-license__content {
       margin-top: 6.8rem; } }

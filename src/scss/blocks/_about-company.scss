@@ -28,6 +28,8 @@
     margin-right: 8.2rem;
     @include breakpoint(mobile) {
         width: 100%;
+        padding-top: 3rem;
+        border-top: 1px solid #B9C1CA;
     }
 }
 
