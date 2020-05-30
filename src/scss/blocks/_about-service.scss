@@ -1,0 +1,114 @@
+.about-service {
+    position: relative;
+    z-index: 1;
+}
+
+.about-service__content {
+    background-color: #f2f4fa;
+    padding-top: 15rem;
+    padding-bottom: 15rem;
+    @include breakpoint(mobile) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+.about-service__row {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+
+.about-service__heading {
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 4.8rem;
+    margin-bottom: 6rem;
+    max-width: 33rem;
+    margin-right: 8.2rem;
+    flex-shrink: 0;
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+        margin-bottom: 2rem;
+        flex-shrink: 1;
+        max-width: none;
+    }
+}
+
+.about-service__info {
+    width: 50%;
+    flex-grow: 1;
+    padding-top: 1rem;
+    @include breakpoint(mobile) {
+        width: 100%;
+        flex-grow: 0;
+        padding-top: 0;
+    }
+}
+
+.about-service__text {
+    font-size: 2.6rem;
+    line-height: 3.1rem;
+   
+    p:not([class]) {
+        margin-bottom: 1.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+    }
+}
+
+.about-service__link {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    position: relative;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    margin-top: 3.5rem;
+    display: inline-block;
+    white-space: nowrap;
+    transition: color .2s;
+    &::after {
+        content: '';
+        height: 0.2rem;
+        width: 100%;
+        top: 100%;
+        left: 0;
+        position: absolute;
+        background-color: var(--primary-color);
+        transition: background-color .2s;
+        @include breakpoint(mobile) {
+            display: none;
+        }
+    }
+
+    &:link,
+    &:visited {
+        color: var(--primary-color);
+    }
+
+    .no-touch &:hover,
+    .touch &:active {
+        color: var(--text-color);
+        &::after {
+            background-color: var(--text-color);
+        }
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1rem;
+        line-height: 1.2;
+        margin-top: 2rem;
+        font-weight: 400;
+        text-decoration: underline;
+    }
+}

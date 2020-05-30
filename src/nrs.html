@@ -1,0 +1,17 @@
+{% set title = "Эксперт - НРС" %}
+{% set activePage = "NRS"  %}
+{% extends "layout.html" %}
+{% block content %}
+    {% include "blocks/nrs.html" %}
+    {% include "blocks/about-service.html" %}
+    {% include "blocks/our-services.html" %}
+    
+   
+    {% include "blocks/make-a-call.html" %}
+    {% include "blocks/advantages.html" %}
+ 
+    {% include "blocks/required-docs.html" %}
+    {% include "blocks/reviews.html" %}
+    {% include "blocks/faq.html" %}
+    {% include "blocks/other-services-standalone.html" %}
+{% endblock %}

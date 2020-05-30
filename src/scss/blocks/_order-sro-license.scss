@@ -13,7 +13,7 @@
 .order-sro-license__intro-text-wrapper {
     margin-top: 30rem;
     position: relative;
-    z-index: -1;
+  
     @include breakpoint(large-desktop) {
         margin-top: 27rem;
     }
@@ -31,7 +31,7 @@
     @include breakpointMF(small-tablet) {
       
 
-        animation-name: slide-up;
+        animation-name: slide-up-fade;
         animation-play-state: paused;
         animation-duration: 0.6s;
         animation-timing-function: ease-out;

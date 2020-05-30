@@ -96,6 +96,7 @@ export default function() {
         setActiveTab(0);
 
         if (element.hasAttribute('data-has-spinner')) {
+            window.scrollBy(0,1);
             window.addEventListener('load', function() {
                 createSpinner();
 

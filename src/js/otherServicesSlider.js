@@ -26,7 +26,7 @@ export default function() {
 
         function init() {
             if (!sliderInstance) sliderInstance = new Swiper(container, options);
-            sliderInstance.snapGrid = [...sliderInstance.slidesGrid];
+            if (window.matchMedia('(max-width: 767px)').matches) sliderInstance.snapGrid = [...sliderInstance.slidesGrid];
         }
 
         function destroy() {
