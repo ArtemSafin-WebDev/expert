@@ -13,6 +13,7 @@ import burgerMenu from './burgerMenu';
 import scrollAnimations from './scrollAnimations';
 import callbackModal from './callbackForm';
 import formValidation from './formValidation';
+import poll from './poll';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -30,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollAnimations();
     callbackModal();
     formValidation();
+    poll();
 });
 
 window.addEventListener('load', function() {

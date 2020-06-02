@@ -60,6 +60,21 @@
                         }
                     })
                 }
+
+
+                
+                var pollForm = document.querySelector('.js-poll .js-poll-form');
+                if (pollForm) {
+                    pollForm.addEventListener('submit', event => {
+                        console.log('Submitting form')
+                        if ($(pollForm).parsley().isValid()) {
+                            event.preventDefault();
+                            window.openPollSuccessWindow();
+                        } else {
+                            console.error('Form not valid')
+                        }
+                    })
+                }
             </script>
         </div>
     </body>

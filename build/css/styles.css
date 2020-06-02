@@ -2111,13 +2111,33 @@ img.lazyload:not([src]) {
   z-index: 340;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s, visibility 0s linear 0.3s;
-  transition: opacity 0.3s, visibility 0s linear 0.3s; }
-  .callback-form-shown .callback {
+  -webkit-transition: opacity 0.4s, visibility 0s linear 0.4s;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
+  pointer-events: none;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
+  .callback.poll-mode {
+    background-color: #f2f4fa;
+    background-image: url("../img/questionmark.png");
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 70rem auto;
+    color: var(--text-color); }
+    @media only screen and (max-width: 1024px) {
+      .callback.poll-mode {
+        background-image: none; } }
+  .poll-open .callback--poll {
     opacity: 1;
     visibility: visible;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
+    -webkit-transition: opacity 0.4s, visibility 0.4s, background-color 0.4s ease 0.4s;
+    transition: opacity 0.4s, visibility 0.4s, background-color 0.4s ease 0.4s;
+    pointer-events: initial; }
+  .callback-form-shown .callback:not(.callback--poll) {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transition: opacity 0.4s, visibility 0.4s;
+    transition: opacity 0.4s, visibility 0.4s;
+    pointer-events: initial; }
 
 .callback__inner {
   height: 100%;
@@ -2160,19 +2180,24 @@ img.lazyload:not([src]) {
     .callback__top-row {
       padding-top: 2rem; } }
 
-.callback__content {
-  padding: 2rem 0; }
-  @media only screen and (max-width: 767px) {
-    .callback__content {
-      padding: 3rem 0; } }
-
 .callback__logo {
-  margin-right: auto; }
+  margin-right: auto;
+  position: relative; }
 
 .callback__logo-image {
   display: block;
   width: 17.2rem;
   height: auto; }
+  .callback__logo-image--poll {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s ease 0.4s;
+    transition: opacity 0.3s ease 0.4s; }
+  .poll-mode .callback__logo-image--poll {
+    opacity: 1; }
   @media only screen and (max-width: 767px) {
     .callback__logo-image {
       width: 10.2rem; } }
@@ -2233,7 +2258,93 @@ img.lazyload:not([src]) {
         height: 1.8rem; } }
 
 .callback__content {
-  margin: auto 0; }
+  margin: auto 0;
+  position: relative; }
+  .callback__content--poll {
+    margin: 0;
+    margin-top: 9rem;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1; }
+    @media only screen and (max-width: 767px) {
+      .callback__content--poll {
+        margin: 0;
+        -webkit-box-flex: 0;
+            -ms-flex-positive: 0;
+                flex-grow: 0; } }
+  @media only screen and (max-width: 767px) {
+    .callback__content {
+      padding: 3rem 0; } }
+
+.callback__poll-nav-btn-content {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .callback__poll-nav-btn-content svg {
+    fill: black;
+    width: 2.4rem;
+    height: 2.4rem;
+    -webkit-transition: fill 0.2s;
+    transition: fill 0.2s; }
+    @media only screen and (max-width: 767px) {
+      .callback__poll-nav-btn-content svg {
+        width: 1.8rem;
+        height: 1.8rem; } }
+
+.callback__poll-nav-btn {
+  position: absolute;
+  right: 100%;
+  top: 0;
+  margin-right: 4rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  background-color: #fff;
+  border-radius: 50%;
+  -webkit-transition: background-color 0.2s;
+  transition: background-color 0.2s; }
+  .callback__poll-nav-btn--next {
+    margin: 0;
+    right: 0; }
+    .callback__poll-nav-btn--next svg {
+      -webkit-transform: scaleX(-1);
+              transform: scaleX(-1); }
+  .no-touch .callback__poll-nav-btn:hover,
+  .touch .callback__poll-nav-btn:active {
+    background-color: var(--primary-color); }
+    .no-touch .callback__poll-nav-btn:hover svg,
+    .touch .callback__poll-nav-btn:active svg {
+      fill: white; }
+  @media only screen and (max-width: 1400px) {
+    .callback__poll-nav-btn {
+      margin-right: 1rem; } }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-nav-btn {
+      position: static;
+      margin: 0;
+      width: 4.2rem;
+      height: 4.2rem; } }
+
+@media only screen and (max-width: 767px) {
+  .callback__poll-nav-btns {
+    margin-bottom: 2rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; } }
 
 .callback__heading {
   font-weight: 900;
@@ -2409,6 +2520,9 @@ img.lazyload:not([src]) {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column; }
+  @media only screen and (max-width: 767px) {
+    .callback__layers {
+      overflow: hidden; } }
 
 .callback__layer {
   position: absolute;
@@ -2419,8 +2533,8 @@ img.lazyload:not([src]) {
   z-index: 5;
   opacity: 0;
   visibility: hidden;
-  -webkit-transition: opacity 0.3s, visibility 0s linear 0.3s;
-  transition: opacity 0.3s, visibility 0s linear 0.3s;
+  -webkit-transition: opacity 0.4s, visibility 0s linear 0.4s;
+  transition: opacity 0.4s, visibility 0s linear 0.4s;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2430,14 +2544,19 @@ img.lazyload:not([src]) {
           flex-direction: column;
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
-          flex-grow: 1; }
+          flex-grow: 1;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden; }
   .callback__layer.active {
     position: relative;
-    z-index: 10;
+    z-index: 20;
     opacity: 1;
     visibility: inherit;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
+    -webkit-transition: opacity 0.4s ease 0.4s, visibility 0.4s ease 0.4s;
+    transition: opacity 0.4s ease 0.4s, visibility 0.4s ease 0.4s; }
+  .initial-load .callback__layer.active {
+    -webkit-transition: opacity 0.4s, visibility 0.4s;
+    transition: opacity 0.4s, visibility 0.4s; }
 
 .callback__btns {
   display: -webkit-box;
@@ -2563,6 +2682,188 @@ img.lazyload:not([src]) {
       margin-top: 5rem; }
       .callback__ok-image ~ .callback__content {
         margin: 0; } }
+
+.callback__poll-heading {
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 6rem;
+  margin-bottom: 5.2rem;
+  max-width: 100rem; }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-heading {
+      font-size: 2.6rem;
+      line-height: 3.1rem;
+      margin-bottom: 2rem;
+      max-width: none; } }
+
+.callback__poll-questions-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -1.9rem -2.5rem; }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-questions-list {
+      -ms-flex-wrap: nowrap;
+          flex-wrap: nowrap;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      margin: 0; } }
+
+.callback__poll-questions-list-item {
+  width: 50%;
+  padding: 1.9rem 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-questions-list-item {
+      padding: 0;
+      margin-bottom: 2rem;
+      width: 100%; }
+      .callback__poll-questions-list-item:last-child {
+        margin-bottom: 0; } }
+
+.callback__poll-questions-checkbox {
+  display: block; }
+
+.callback__poll-questions-checkbox-input {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap; }
+
+.callback__poll-questions-checkbox-input:checked ~ .callback__poll-questions-checkbox-content {
+  background-color: var(--primary-color);
+  color: white; }
+  .callback__poll-questions-checkbox-input:checked ~ .callback__poll-questions-checkbox-content .callback__poll-questions-checkbox-checkmark-container svg {
+    opacity: 1; }
+
+.callback__poll-questions-checkbox-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #d6e1ec;
+  padding: 2.2rem;
+  min-height: 11.2rem;
+  border-radius: 13rem;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .callback__poll-questions-checkbox--simple .callback__poll-questions-checkbox-content {
+    background-color: #fff;
+    padding-left: 5rem;
+    padding-right: 5rem; }
+    @media only screen and (max-width: 767px) {
+      .callback__poll-questions-checkbox--simple .callback__poll-questions-checkbox-content {
+        padding: 2rem 3.5rem;
+        min-height: 7rem; } }
+
+.callback__poll-questions-checkbox-checkmark-container {
+  width: 7rem;
+  height: 7rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  margin-right: 2rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-questions-checkbox-checkmark-container {
+      width: 4rem;
+      height: 4rem; } }
+  .callback__poll-questions-checkbox--simple .callback__poll-questions-checkbox-checkmark-container {
+    display: none; }
+  .callback__poll-questions-checkbox-checkmark-container svg {
+    width: 3.2rem;
+    height: 3.2rem;
+    fill: var(--primary-color);
+    display: block;
+    opacity: 0;
+    -webkit-transition: opacity 0.3s;
+    transition: opacity 0.3s; }
+    @media only screen and (max-width: 767px) {
+      .callback__poll-questions-checkbox-checkmark-container svg {
+        width: 1.8rem;
+        height: 1.8rem; } }
+
+.callback__poll-questions-checkbox-text {
+  width: 50%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 1.9rem;
+  line-height: 2.3rem; }
+  .callback__poll-questions-checkbox--simple .callback__poll-questions-checkbox-text {
+    text-align: center;
+    width: 100%; }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-questions-checkbox-text {
+      font-size: 1.4rem;
+      line-height: 1.3; } }
+
+.callback__poll-progressbar {
+  background: #d6e1ec;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.7rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s, visibility 0s linear 0.3s;
+  transition: opacity 0.3s, visibility 0s linear 0.3s; }
+  .poll-mode .callback__poll-progressbar {
+    opacity: 1;
+    visibility: inherit;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
+  @media only screen and (max-width: 767px) {
+    .callback__poll-progressbar {
+      height: 0.5rem; } }
+
+.callback__poll-progressbar-spinner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--primary-color);
+  -webkit-transform-origin: left center;
+          transform-origin: left center; }
+
+.callback__poll-questions {
+  max-width: 100rem;
+  width: 100%; }
+  @media only screen and (max-width: 1024px) {
+    .callback__poll-questions {
+      max-width: none; } }
 
 .types {
   color: white;

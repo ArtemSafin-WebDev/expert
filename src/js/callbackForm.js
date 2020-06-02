@@ -1,5 +1,6 @@
 import { lockScroll, unlockScroll } from './scrollBlocker';
 export default function() {
+    const callbackModalElement = document.querySelector('.js-callback-modal');
     const callbackModalScrollContainer = document.querySelector('.js-callback-modal .callback__inner');
     let callbackModalOpen = false;
     const callbackFormLayer = document.querySelector('.js-callback-modal .js-callback-form-layer');
@@ -11,6 +12,14 @@ export default function() {
         callbackModalOpen = true;
         lockScroll(callbackModalScrollContainer);
 
+        const transitionEndHandler = () => {
+            callbackModalElement.classList.remove('initial-load');
+            callbackModalElement.removeEventListener('transitionend', transitionEndHandler);
+        }
+
+        callbackModalElement.addEventListener('transitionend', transitionEndHandler);
+        callbackModalElement.classList.add('initial-load');
+
         const event = new CustomEvent('callbackOpen');
         document.dispatchEvent(event);
     }
@@ -18,6 +27,8 @@ export default function() {
         document.body.classList.remove('callback-form-shown');
         callbackModalOpen = false;
         unlockScroll();
+
+        callbackModalElement.classList.remove('initial-load');
 
         const event = new CustomEvent('callbackClose');
         document.dispatchEvent(event);

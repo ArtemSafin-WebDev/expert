@@ -10,7 +10,7 @@ export default function() {
         const controller = new ScrollMagic.Controller();
         const bgImage = document.querySelector('.fullheight-bg');
         const bgImageOverlay = document.querySelector('.fullheight-bg__overlay');
-        console.log('Animating bg')
+        console.log('Animating bg');
         const bgTl = gsap.timeline();
         gsap.set(bgImage, { position: 'fixed' });
         bgTl.to(
@@ -47,8 +47,16 @@ export default function() {
         gsap.set(introTextWrapper, {
             minHeight: introText.offsetHeight
         });
-        gsap.set(introText, { transformOrigin: 'center', position: 'fixed', paddingLeft: introTextWrapper.getBoundingClientRect().left, top: introTextWrapper.getBoundingClientRect().top + window.pageYOffset, width: '100%', left: 0 });
-      
+        gsap.set(introText, {
+            transformOrigin: 'center',
+            position: 'fixed',
+            zIndex: -1,
+            paddingLeft: introTextWrapper.getBoundingClientRect().left,
+            top: introTextWrapper.getBoundingClientRect().top + window.pageYOffset,
+            width: '100%',
+            left: 0,
+           
+        });
 
         gsap.set(sidelogo, {
             left: 'auto',
@@ -86,7 +94,8 @@ export default function() {
             duration: 1,
             autoAlpha: 0,
             scale: 0.97,
-            ease: 'none'
+            ease: 'none',
+            display: 'none'
         });
 
         new ScrollMagic.Scene({

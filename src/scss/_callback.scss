@@ -9,12 +9,37 @@
     z-index: 340;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
+    pointer-events: none;
+    backface-visibility: hidden;
 
-    .callback-form-shown & {
+    &.poll-mode {
+        background-color: #f2f4fa;
+        background-image: url('../img/questionmark.png');
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-size: 70rem auto;
+        color: var(--text-color);
+
+        @include breakpoint(tablet) {
+            background-image: none;
+        }
+    }
+
+    &--poll {
+        .poll-open & {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.4s, visibility 0.4s, background-color 0.4s ease 0.4s;
+            pointer-events: initial;
+        }
+    }
+
+    .callback-form-shown &:not(.callback--poll) {
         opacity: 1;
         visibility: visible;
-        transition: all 0.3s;
+        transition: opacity 0.4s, visibility 0.4s;
+        pointer-events: initial;
     }
 }
 
@@ -46,21 +71,28 @@
     }
 }
 
-.callback__content {
-    padding: 2rem 0;
-    @include breakpoint(mobile) {
-        padding: 3rem 0;
-    }
-}
-
 .callback__logo {
     margin-right: auto;
+    position: relative;
 }
 
 .callback__logo-image {
     display: block;
     width: 17.2rem;
     height: auto;
+
+    &--poll {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        opacity: 0;
+        transition: opacity 0.3s ease 0.4s;
+    }
+
+    .poll-mode &--poll {
+        opacity: 1;
+    }
 
     @include breakpoint(mobile) {
         width: 10.2rem;
@@ -78,6 +110,7 @@
     right: 5rem;
     top: 4rem;
     z-index: 50;
+
     .no-touch &:hover,
     .touch &:active {
         background-color: var(--text-color);
@@ -119,6 +152,96 @@
 
 .callback__content {
     margin: auto 0;
+    position: relative;
+    &--poll {
+        margin: 0;
+        margin-top: 9rem;
+        flex-grow: 1;
+
+        @include breakpoint(mobile) {
+            margin: 0;
+            flex-grow: 0;
+        }
+    }
+    @include breakpoint(mobile) {
+        padding: 3rem 0;
+    }
+}
+
+.callback__poll-nav-btn-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        fill: black;
+        width: 2.4rem;
+        height: 2.4rem;
+        transition: fill 0.2s;
+
+        @include breakpoint(mobile) {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+}
+
+.callback__poll-nav-btn {
+    position: absolute;
+    right: 100%;
+    top: 0;
+    margin-right: 4rem;
+
+    width: 6.2rem;
+    height: 6.2rem;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: background-color 0.2s;
+
+    &--next {
+        margin: 0;
+        right: 0;
+      
+        svg {
+            transform: scaleX(-1);
+        }
+    }
+    .no-touch &:hover,
+    .touch &:active {
+        background-color: var(--primary-color);
+
+        svg {
+            fill: white;
+        }
+    }
+
+    @include breakpoint(desktop) {
+        margin-right: 1rem;
+
+        // top: .5rem;
+    }
+
+    @include breakpoint(mobile) {
+        position: static;
+        margin: 0;
+        width: 4.2rem;
+        height: 4.2rem;
+
+        // &--next {
+        //     margin-left: auto;
+        // }
+    }
+}
+
+.callback__poll-nav-btns {
+    @include breakpoint(mobile) {
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+    }
 }
 
 .callback__heading {
@@ -286,6 +409,11 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+  
+
+    @include breakpoint(mobile) {
+        overflow: hidden;
+    }
 }
 
 .callback__layer {
@@ -297,17 +425,21 @@
     z-index: 5;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s, visibility 0s linear 0.3s;
+    transition: opacity 0.4s, visibility 0s linear 0.4s;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-
+    backface-visibility: hidden;
     &.active {
         position: relative;
-        z-index: 10;
+        z-index: 20;
         opacity: 1;
         visibility: inherit;
-        transition: all 0.3s;
+        transition: opacity 0.4s ease 0.4s, visibility 0.4s ease 0.4s;
+    }
+
+    .initial-load &.active {
+        transition: opacity 0.4s, visibility 0.4s;
     }
 }
 
@@ -414,15 +546,12 @@
         opacity: 0.5;
     }
 
-
     @include breakpoint(mobile) {
         left: 50%;
         right: auto;
         top: 2rem;
         width: 80%;
         transform: translateX(-50%);
-
-
 
         position: static;
         transform: none;
@@ -433,5 +562,184 @@
         & ~ .callback__content {
             margin: 0;
         }
+    }
+}
+
+.callback__poll-heading {
+    font-weight: 900;
+    font-size: 5rem;
+    line-height: 6rem;
+    margin-bottom: 5.2rem;
+
+    max-width: 100rem;
+
+    @include breakpoint(mobile) {
+        font-size: 2.6rem;
+        line-height: 3.1rem;
+
+        margin-bottom: 2rem;
+        max-width: none;
+    }
+}
+
+.callback__poll-questions-list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -1.9rem -2.5rem;
+
+    @include breakpoint(mobile) {
+        flex-wrap: nowrap;
+        flex-direction: column;
+        margin: 0;
+    }
+}
+
+.callback__poll-questions-list-item {
+    width: 50%;
+    padding: 1.9rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+
+    @include breakpoint(mobile) {
+        padding: 0;
+
+        margin-bottom: 2rem;
+        width: 100%;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.callback__poll-questions-checkbox {
+    display: block;
+}
+
+.callback__poll-questions-checkbox-input {
+    @include visuallyHidden();
+}
+
+.callback__poll-questions-checkbox-input:checked ~ .callback__poll-questions-checkbox-content {
+    background-color: var(--primary-color);
+    color: white;
+
+    .callback__poll-questions-checkbox-checkmark-container svg {
+        opacity: 1;
+    }
+}
+
+.callback__poll-questions-checkbox-content {
+    display: flex;
+    align-items: center;
+    background: #d6e1ec;
+    padding: 2.2rem;
+    min-height: 11.2rem;
+    border-radius: 13rem;
+
+    transition: all 0.3s;
+
+    .callback__poll-questions-checkbox--simple & {
+        background-color: #fff;
+        padding-left: 5rem;
+        padding-right: 5rem;
+
+        @include breakpoint(mobile) {
+            padding: 2rem 3.5rem;
+            min-height: 7rem;
+        }
+    }
+}
+
+.callback__poll-questions-checkbox-checkmark-container {
+    width: 7rem;
+    height: 7rem;
+    flex-shrink: 0;
+    margin-right: 2rem;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(mobile) {
+        width: 4rem;
+        height: 4rem;
+    }
+
+    .callback__poll-questions-checkbox--simple & {
+        display: none;
+    }
+
+    svg {
+        width: 3.2rem;
+        height: 3.2rem;
+        fill: var(--primary-color);
+        display: block;
+        opacity: 0;
+        transition: opacity 0.3s;
+
+        @include breakpoint(mobile) {
+            width: 1.8rem;
+            height: 1.8rem;
+        }
+    }
+}
+
+.callback__poll-questions-checkbox-text {
+    width: 50%;
+    flex-grow: 1;
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+
+    .callback__poll-questions-checkbox--simple & {
+        text-align: center;
+        width: 100%;
+    }
+
+    @include breakpoint(mobile) {
+        font-size: 1.4rem;
+        line-height: 1.3;
+    }
+}
+
+.callback__poll-progressbar {
+    background: #d6e1ec;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0.7rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0s linear 0.3s;
+
+    .poll-mode & {
+        opacity: 1;
+        visibility: inherit;
+        transition: all 0.3s;
+    }
+
+    @include breakpoint(mobile) {
+        height: 0.5rem;
+    }
+}
+
+.callback__poll-progressbar-spinner {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--primary-color);
+    transform-origin: left center;
+}
+
+.callback__poll-questions {
+    max-width: 100rem;
+    width: 100%;
+
+    @include breakpoint(tablet) {
+        max-width: none;
     }
 }
