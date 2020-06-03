@@ -230,9 +230,9 @@
         width: 4.2rem;
         height: 4.2rem;
 
-        // &--next {
-        //     margin-left: auto;
-        // }
+        &--next {
+            margin-left: auto;
+        }
     }
 }
 
@@ -613,6 +613,13 @@
 
 .callback__poll-questions-checkbox {
     display: block;
+
+    .no-touch &:hover,
+    .touch &:active {
+        .callback__poll-questions-checkbox-content {
+            border-color: var(--primary-color);
+        }
+    }
 }
 
 .callback__poll-questions-checkbox-input {
@@ -621,6 +628,7 @@
 
 .callback__poll-questions-checkbox-input:checked ~ .callback__poll-questions-checkbox-content {
     background-color: var(--primary-color);
+    border-color: var(--primary-color);
     color: white;
 
     .callback__poll-questions-checkbox-checkmark-container svg {
@@ -635,11 +643,12 @@
     padding: 2.2rem;
     min-height: 11.2rem;
     border-radius: 13rem;
-
+    border: .2rem solid #d6e1ec;
     transition: all 0.3s;
 
     .callback__poll-questions-checkbox--simple & {
         background-color: #fff;
+        border-color: white;
         padding-left: 5rem;
         padding-right: 5rem;
 
