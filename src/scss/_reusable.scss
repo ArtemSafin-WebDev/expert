@@ -29,6 +29,10 @@
     .animatable & {
         animation-play-state: running;
     }
+
+    .is-admin & {
+        animation-name: none;
+    }
 }
 
 .page-description__inner-content {

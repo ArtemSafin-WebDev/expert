@@ -30,7 +30,7 @@
     .swiper-slide {
         width: 33.33%;
         @include breakpoint(mobile) {
-            width: 33.6rem;
+            width: 92%;
         }
     }
 
@@ -63,6 +63,10 @@
         animation-delay: 0.7s;
         .animatable & {
             animation-play-state: running;
+        }
+
+        .is-admin & {
+            animation-name: none;
         }
     }
 }

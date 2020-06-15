@@ -7,6 +7,10 @@
     z-index: 200;
 }
 
+.is-admin .page-header {
+    position: relative;
+}
+
 .page-header__row {
     padding-top: 5.2rem;
     display: flex;
@@ -21,6 +25,10 @@
         animation-delay: 1.3s;
         .animatable & {
             animation-play-state: running;
+        }
+
+        .is-admin & {
+            animation-name: none;
         }
     }
 

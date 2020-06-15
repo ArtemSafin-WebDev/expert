@@ -11,13 +11,17 @@ export default function() {
         const options = {
             watchOverflow: true,
             slidesPerView: 1,
+            slidesPerGroup: 1,
+            speed: 400,
             navigation: {
                 nextEl: element.querySelector('.team__slider-btn--next'),
                 prevEl: element.querySelector('.team__slider-btn--prev')
             },
             breakpoints: {
                 768: {
-                    slidesPerView: 3
+                    slidesPerView: 3,
+                    slidesPerGroup: 3,
+                    speed: 700,
                 }
             }
         };
@@ -26,7 +30,7 @@ export default function() {
 
         function init() {
             if (!sliderInstance) sliderInstance = new Swiper(container, options);
-            sliderInstance.snapGrid = [...sliderInstance.slidesGrid];
+            // sliderInstance.snapGrid = [...sliderInstance.slidesGrid];
         }
 
         function destroy() {

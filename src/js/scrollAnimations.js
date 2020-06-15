@@ -5,6 +5,8 @@ import { ScrollMagicPluginGsap } from 'scrollmagic-plugin-gsap';
 ScrollMagicPluginGsap(ScrollMagic, gsap);
 
 export default function() {
+
+    
     window.scrollBy(0, 1);
     window.addEventListener('load', function() {
         const controller = new ScrollMagic.Controller();
@@ -30,7 +32,8 @@ export default function() {
             .setTween(bgTl)
             .addTo(controller);
 
-        if (window.matchMedia('(max-width: 1024px)').matches) return;
+        if (window.matchMedia('(max-width: 1024px)').matches || document.body.classList.contains('is-admin')) return;
+       
 
         const types = document.querySelector('.types');
         const apply = document.querySelector('.how-to-apply');
