@@ -23,22 +23,45 @@
     }
 }
 
-.our-offices__col {
+
+.our-offices__left-col {
     width: 33.33%;
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.our-offices__right-col {
+    width: 66.66%;
+
+
+    @include breakpoint(mobile) {
+        width: 100%;
+    }
+}
+
+.our-offices__inner-row {
+    display: flex;
+    @include breakpoint(mobile) {
+        flex-direction: column;
+    }
+}
+.our-offices__col {
+    width: 50%;
     display: flex;
     flex-direction: column;
 
-    &:nth-child(3n + 1) {
-        .our-offices__card {
-            padding-left: 0;
-        }
-    }
+    // &:nth-child(2n + 1) {
+    //     .our-offices__card {
+    //         padding-left: 0;
+    //     }
+    // }
 
-    &:nth-child(3n) {
-        .our-offices__card {
-            border-right: none;
-        }
-    }
+    // &:nth-child(2n) {
+    //     .our-offices__card {
+    //         border-right: none;
+    //     }
+    // }
 
     @include breakpoint(mobile) {
         width: 100%;
