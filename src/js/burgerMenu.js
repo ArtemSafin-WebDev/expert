@@ -6,19 +6,34 @@ export default function() {
 
     let burgerMenuOpen = false;
 
+    function burgerOpen() {
+        document.body.classList.add('burger-menu-open');
+        lockScroll(burgerMenuInnerWrapper);
+        burgerMenuOpen = true;
+    }
+
+    function burgerClose() {
+        document.body.classList.remove('burger-menu-open');
+        unlockScroll();
+        burgerMenuOpen = false;
+    }
+
     if (burgerBtn && burgerMenuInnerWrapper) {
         burgerBtn.addEventListener('click', event => {
             event.preventDefault();
 
             if (!burgerMenuOpen) {
-                document.body.classList.add('burger-menu-open');
-                lockScroll(burgerMenuInnerWrapper);
-                burgerMenuOpen = true;
+                burgerOpen();
             } else {
-                document.body.classList.remove('burger-menu-open');
-                unlockScroll();
-                burgerMenuOpen = false;
+                burgerClose();
             }
         });
     }
+
+    document.addEventListener(
+        'anchorclick',
+        () => {
+            burgerClose();
+        }
+    );
 }

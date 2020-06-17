@@ -172,6 +172,19 @@
     max-width: 30rem;
     margin-bottom: 2.5rem;
 
+    a {
+        transition: color .2s;
+        &:link,
+        &:visited {
+            color: inherit;
+        }
+
+        .no-touch &:hover,
+        .touch &:active {
+            color: var(--primary-color);
+        }
+    }
+
     @include breakpoint(mobile) {
         font-size: 2rem;
         line-height: 2.4rem;

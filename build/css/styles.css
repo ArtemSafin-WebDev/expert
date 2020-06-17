@@ -2469,6 +2469,14 @@ img.lazyload:not([src]) {
       padding: 1.8rem 0;
       padding-right: 3rem; } }
 
+textarea.callback__form-input {
+  resize: none;
+  display: block;
+  width: 100%;
+  height: 8rem;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 2rem; }
+
 .callback__form-submit {
   background-color: #fff;
   padding: 2.5rem 2.2rem;
@@ -3052,6 +3060,14 @@ img.lazyload:not([src]) {
   line-height: 3.8rem;
   max-width: 30rem;
   margin-bottom: 2.5rem; }
+  .types__card-title a {
+    -webkit-transition: color .2s;
+    transition: color .2s; }
+    .types__card-title a:link, .types__card-title a:visited {
+      color: inherit; }
+    .no-touch .types__card-title a:hover,
+    .touch .types__card-title a:active {
+      color: var(--primary-color); }
   @media only screen and (max-width: 767px) {
     .types__card-title {
       font-size: 2rem;
