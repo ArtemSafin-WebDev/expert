@@ -2473,11 +2473,12 @@ img.lazyload:not([src]) {
   font-size: 1.9rem;
   line-height: 2.3rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 2rem; }
+  margin-bottom: 3.4rem; }
   @media only screen and (max-width: 767px) {
     .callback__form-label {
       font-size: 1.2rem;
-      line-height: 1.4rem; } }
+      line-height: 1.4rem;
+      margin-bottom: 2rem; } }
 
 textarea.callback__form-input {
   resize: none;

@@ -355,12 +355,12 @@
     font-size: 1.9rem;
     line-height: 2.3rem;
     color: rgba(white, 0.7);
-    margin-bottom: 2rem;
+    margin-bottom: 3.4rem;
     @include breakpoint(mobile) {
         font-size: 1.2rem;
         line-height: 1.4rem;
 
-        
+        margin-bottom: 2rem;
     }
 }
 
