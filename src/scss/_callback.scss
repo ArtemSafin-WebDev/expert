@@ -351,6 +351,19 @@
     }
 }
 
+.callback__form-label {
+    font-size: 1.9rem;
+    line-height: 2.3rem;
+    color: rgba(white, 0.7);
+    margin-bottom: 2rem;
+    @include breakpoint(mobile) {
+        font-size: 1.2rem;
+        line-height: 1.4rem;
+
+        
+    }
+}
+
 textarea.callback__form-input {
     resize: none;
     display: block;
@@ -358,6 +371,7 @@ textarea.callback__form-input {
     height: 8rem;
     border: 1px solid rgba(white, 0.7);
     padding: 2rem;
+    flex-grow: 1;
 }
 
 .callback__form-submit {
