@@ -15,6 +15,7 @@ import callbackModal from './callbackForm';
 import formValidation from './formValidation';
 import poll from './poll';
 import anchorLinks from './anchorLinks';
+import showMore from './showMore';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
     formValidation();
     poll();
     anchorLinks();
+    showMore();
 });
 
 window.addEventListener('load', function() {
