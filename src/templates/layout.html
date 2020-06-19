@@ -36,13 +36,11 @@
             <span class="fullheight-bg__overlay"></span>
         </div>
         <div class="page-content">
-            {% include "partials/preloader.html" %}
-            {% include "partials/header.html" %}
+            {% include "partials/preloader.html" %} {% include "partials/header.html" %}
             <main class="page-main">
                 {% block content %}{% endblock %}
             </main>
-            {% include "partials/footer.html" %} 
-            {% include "partials/modals.html" %}
+            {% include "partials/footer.html" %} {% include "partials/modals.html" %}
             <script src="assets/js/jQuery.js"></script>
             <script src="js/app.js"></script>
             <script>
@@ -52,30 +50,61 @@
 
                 if (callbackForm) {
                     callbackForm.addEventListener('submit', event => {
-                        console.log('Submitting form')
-                        if ($(callbackForm).parsley().isValid()) {
+                        console.log('Submitting form');
+                        if (
+                            $(callbackForm)
+                                .parsley()
+                                .isValid()
+                        ) {
                             event.preventDefault();
                             callbackFormDefaultLayer.classList.remove('active');
-                            callbackFormSuccessLayer.classList.add('active')
+                            callbackFormSuccessLayer.classList.add('active');
                         } else {
-                            console.error('Form not valid')
+                            console.error('Form not valid');
                         }
-                    })
+                    });
                 }
 
-
-                
                 var pollForm = document.querySelector('.js-poll .js-poll-form');
                 if (pollForm) {
                     pollForm.addEventListener('submit', event => {
-                        console.log('Submitting form')
-                        if ($(pollForm).parsley().isValid()) {
+                        console.log('Submitting form');
+                        if (
+                            $(pollForm)
+                                .parsley()
+                                .isValid()
+                        ) {
                             event.preventDefault();
                             window.openPollSuccessWindow();
                         } else {
-                            console.error('Form not valid')
+                            console.error('Form not valid');
                         }
-                    })
+                    });
+                }
+
+                var footerForm = document.querySelector('.page-footer__form-card-form');
+
+                if (footerForm) {
+                    var submitBtn = footerForm.querySelector('.page-footer__form-card-form-submit');
+                    var originalSubmitText = submitBtn.textContent;
+                    footerForm.addEventListener('submit', event => {
+                        if (
+                            $(footerForm)
+                                .parsley()
+                                .isValid()
+                        ) {
+                            event.preventDefault();
+                            var submitBtn = footerForm.querySelector('.page-footer__form-card-form-submit');
+
+                            submitBtn.textContent = 'Отправлено';
+                            setTimeout(function() {
+                                submitBtn.textContent = originalSubmitText;
+                            }, 2000);
+                            1;
+                        } else {
+                            console.error('Form not valid');
+                        }
+                    });
                 }
             </script>
         </div>

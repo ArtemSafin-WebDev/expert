@@ -1582,7 +1582,6 @@
                     </div>
                 </div>
             </footer>
-
             <div class="callback callback--poll poll-mode js-poll">
                 <form action="/" method="POST" class="callback__inner js-poll-form" data-parsley-validate>
                     <div class="container">
@@ -2024,6 +2023,31 @@
                         ) {
                             event.preventDefault();
                             window.openPollSuccessWindow();
+                        } else {
+                            console.error('Form not valid');
+                        }
+                    });
+                }
+
+                var footerForm = document.querySelector('.page-footer__form-card-form');
+
+                if (footerForm) {
+                    var submitBtn = footerForm.querySelector('.page-footer__form-card-form-submit');
+                    var originalSubmitText = submitBtn.textContent;
+                    footerForm.addEventListener('submit', event => {
+                        if (
+                            $(footerForm)
+                                .parsley()
+                                .isValid()
+                        ) {
+                            event.preventDefault();
+                            var submitBtn = footerForm.querySelector('.page-footer__form-card-form-submit');
+
+                            submitBtn.textContent = 'Отправлено';
+                            setTimeout(function() {
+                                submitBtn.textContent = originalSubmitText;
+                            }, 2000);
+                            1;
                         } else {
                             console.error('Form not valid');
                         }
