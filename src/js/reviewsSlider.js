@@ -10,7 +10,7 @@ export default function() {
         const mainSlider = new Swiper(mainContainer, {
             watchOverflow: true,
             speed: 800,
-
+            autoHeight: true,
             navigation: {
                 nextEl: element.querySelector('.reviews__slider-btn--next'),
                 prevEl: element.querySelector('.reviews__slider-btn--prev')

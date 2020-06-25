@@ -41,8 +41,10 @@
 
 .reviews__slider {
     display: flex;
+    align-items: center;
     @include breakpoint(mobile) {
         flex-direction: column;
+        align-items: initial;
         padding-right: var(--content-padding);
     }
 }
@@ -70,14 +72,14 @@
 
     z-index: 2;
     pointer-events: none;
-    bottom: -3rem;
+    bottom: -2.2rem;
     svg {
         width: 100%;
         height: 100%;
     }
 
     @include breakpoint(mobile) {
-        bottom: -3rem;
+        bottom: -2.2rem;
     }
 }
 
@@ -162,15 +164,17 @@
 }
 
 .reviews__slider-main-card {
-    padding: 2rem 5rem;
+    padding: 5rem 5rem;
     min-height: 36rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    min-height: auto;
     @include breakpoint(mobile) {
         padding: 2.5rem 3rem;
         min-height: auto;
         flex-grow: 1;
+        
     }
 }
 
@@ -261,3 +265,8 @@
         }
     }
 }
+
+
+// .reviews__slider-main .swiper-wrapper {
+//     position: relative;
+// }
