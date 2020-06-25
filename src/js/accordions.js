@@ -24,15 +24,27 @@ export default function() {
         }, 20);
     }
 
+
+    
+
     const accordionElements = Array.from(document.querySelectorAll('.js-accordion'));
+    const accordionInstances = [];
 
     accordionElements.forEach(element => {
         const btn = element.querySelector('.js-accordion-btn');
         const content = element.querySelector('.js-accordion-content');
+        accordionInstances.push({
+            btn,
+            content
+        })
 
         btn.addEventListener('click', event => {
             event.preventDefault();
             if (!element.classList.contains('active')) {
+                accordionInstances.forEach(acc => {
+                    closeAccordeon(acc.content)
+                });
+                accordionElements.forEach(element => element.classList.remove('active'))
                 openAccordeon(content);
                 element.classList.add('active');
             } else {
