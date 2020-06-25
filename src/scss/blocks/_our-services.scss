@@ -71,6 +71,8 @@
     padding-left: 0;
     padding-top: 3rem;
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     &:hover {
         .our-services__card-icon--red {
             opacity: 1;
@@ -161,6 +163,7 @@
 .our-services__card-btns {
     display: flex;
     align-items: center;
+    margin-top: auto;
     @include breakpoint(mobile) {
         flex-direction: column;
         align-items: initial;
