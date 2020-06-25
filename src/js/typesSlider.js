@@ -9,22 +9,33 @@ export default function() {
 
         const options = {
             slidesPerView: 'auto',
+            // watchSlidesProgress: true,
             watchOverflow: true,
-            spaceBetween: 0
+            spaceBetween: 0,
+            on: {
+                progress: function() {
+                    if (this.isEnd) {
+                        element.classList.add('last-slide-reached');
+                    } else {
+                        element.classList.remove('last-slide-reached');
+                    }
+                    console.log('is end', this.isEnd)
+                }
+            }
         };
 
         const mql = window.matchMedia('(max-width: 767px)');
 
         function init() {
             if (!sliderInstance) sliderInstance = new Swiper(container, options);
-            sliderInstance.snapGrid = [...sliderInstance.slidesGrid];
-            console.log('Slider initialized')
+            // sliderInstance.snapGrid = [...sliderInstance.slidesGrid];
+            console.log('Slider initialized');
         }
 
         function destroy() {
             if (sliderInstance) sliderInstance.destroy();
             sliderInstance = null;
-            console.log('Slider destroyed')
+            console.log('Slider destroyed');
         }
 
         function controller(mq) {

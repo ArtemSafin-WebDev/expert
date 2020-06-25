@@ -31,6 +31,7 @@
         width: 33.33%;
         @include breakpoint(mobile) {
             width: 92%;
+          
         }
     }
 
@@ -146,7 +147,26 @@
             width: 25rem;
             height: 25rem;
             transform: translateZ(0) translate(-50%, -52%) scale(0);
+            transform: translateZ(0) translate(-20%, -62%) scale(0);
         }
+
+        .last-slide-reached &,
+        .swiper-slide-active & {
+            &::before {
+                transform: translateZ(0) translate(-50%, -52%) scale(1);
+
+                transform: translateZ(0) translate(-20%, -62%) scale(1);
+            }
+
+            .types__card-details-link {
+                color: white;
+            }
+    
+            .types__card-order-link {
+                color: white;
+            }
+        }
+
     }
 }
 

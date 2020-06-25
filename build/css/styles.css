@@ -3051,7 +3051,21 @@ textarea.callback__form-input {
         width: 25rem;
         height: 25rem;
         -webkit-transform: translateZ(0) translate(-50%, -52%) scale(0);
-                transform: translateZ(0) translate(-50%, -52%) scale(0); } }
+                transform: translateZ(0) translate(-50%, -52%) scale(0);
+        -webkit-transform: translateZ(0) translate(-20%, -62%) scale(0);
+                transform: translateZ(0) translate(-20%, -62%) scale(0); }
+      .last-slide-reached .types__card::before,
+      .swiper-slide-active .types__card::before {
+        -webkit-transform: translateZ(0) translate(-50%, -52%) scale(1);
+                transform: translateZ(0) translate(-50%, -52%) scale(1);
+        -webkit-transform: translateZ(0) translate(-20%, -62%) scale(1);
+                transform: translateZ(0) translate(-20%, -62%) scale(1); }
+      .last-slide-reached .types__card .types__card-details-link,
+      .swiper-slide-active .types__card .types__card-details-link {
+        color: white; }
+      .last-slide-reached .types__card .types__card-order-link,
+      .swiper-slide-active .types__card .types__card-order-link {
+        color: white; } }
 
 .types__card-image {
   position: absolute;
