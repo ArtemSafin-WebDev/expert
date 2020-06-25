@@ -2464,7 +2464,7 @@ img.lazyload:not([src]) {
     color: rgba(255, 255, 255, 0.7); }
   @media only screen and (max-width: 767px) {
     .callback__form-input {
-      font-size: 1.2rem;
+      font-size: 16px;
       line-height: 1.4rem;
       padding: 1.8rem 0;
       padding-right: 3rem; } }
@@ -2478,7 +2478,9 @@ img.lazyload:not([src]) {
     .callback__form-label {
       font-size: 1.2rem;
       line-height: 1.4rem;
-      margin-bottom: 2rem; } }
+      font-size: 16px;
+      margin-bottom: 2rem;
+      margin-top: 2rem; } }
 
 textarea.callback__form-input {
   resize: none;
