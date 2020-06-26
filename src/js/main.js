@@ -16,6 +16,7 @@ import formValidation from './formValidation';
 import poll from './poll';
 import anchorLinks from './anchorLinks';
 import showMore from './showMore';
+import maps from './maps';
 
 document.addEventListener('DOMContentLoaded', function() {
     polyfills();
@@ -36,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
     poll();
     anchorLinks();
     showMore();
+    maps();
 });
 
 window.addEventListener('load', function() {
