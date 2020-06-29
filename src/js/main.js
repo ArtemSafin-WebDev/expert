@@ -19,6 +19,9 @@ import showMore from './showMore';
 import maps from './maps';
 
 document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(() => {
+        document.body.classList.add('animatable');
+    }, 300);
     polyfills();
     detectTouch();
     offersSlider();
@@ -42,7 +45,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
 window.addEventListener('load', function() {
     document.body.classList.add('loaded');
-    setTimeout(() => {
-        document.body.classList.add('animatable');
-    }, 300);
+   
 });

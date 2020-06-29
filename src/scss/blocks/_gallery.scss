@@ -139,9 +139,12 @@
     }
 
     @include breakpoint(mobile) {
-        max-width: 40rem;
+        
         bottom: 3.8rem;
-        right: -5rem;
+        right: 0;
+        width: calc(100% - var(--content-padding));
+      
+        max-width: none;
     }
 }
 

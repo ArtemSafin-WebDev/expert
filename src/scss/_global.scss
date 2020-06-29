@@ -45,11 +45,11 @@ html {
     }
 
     @include breakpoint(laptop) {
-        font-size: 7.5px;
+        font-size: 7px;
     }
 
     @include breakpoint(tablet) {
-        font-size: 7px;
+        font-size: 6.5px;
     }
 
     @include breakpoint(small-tablet) {
@@ -78,7 +78,8 @@ body {
     flex-direction: column;
     font-family: var(--helios-ext);
     color: var(--text-color);
-    background-image: url('../img/body-bg-tileable.png');
+    // background-color: var(--primary-color);
+    // background-image: url('../img/body-bg-tileable.png');
     background-size: 100% auto;
     background-repeat: repeat-y;
     background-position: center top;
