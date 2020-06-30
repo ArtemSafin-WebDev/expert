@@ -163,14 +163,15 @@ export default function() {
                 }, 250);
             });
 
+            
+
             tl.to(pageFooter, {
                 duration: 1,
                 autoAlpha: 1
             });
             new ScrollMagic.Scene({
-                triggerElement: document.querySelector('section:last-child'),
-                triggerHook: 0,
-                duration: '100%'
+                duration: pageFooter.offsetHeight, 
+                offset: document.querySelector('.page-main').offsetHeight - window.innerHeight
             })
                 .setTween(tl)
                 .addTo(controller);
