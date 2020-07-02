@@ -627,7 +627,8 @@ button.swiper-pagination-bullet {
   --helios-ext: 'HeliosExtC', sans-serif;
   --helios: 'HeliosC', sans-serif;
   --segoe: 'Segoe Script', sans-serif;
-  --text-color: #242020; }
+  --text-color: #242020;
+  --montserrat: 'Montserrat', sans-serif; }
   @media only screen and (max-width: 1400px) {
     :root {
       --content-padding: 8rem; } }
@@ -3228,7 +3229,7 @@ textarea.callback__form-input {
   font-weight: bold;
   font-size: 2.2rem;
   line-height: 2.6rem;
-  font-family: var(--helios); }
+  font-family: var(--montserrat); }
   @media only screen and (max-width: 767px) {
     .advantages__card-title {
       font-size: 1.4rem;
@@ -6932,7 +6933,7 @@ textarea.callback__form-input {
   font-size: 1.9rem;
   line-height: 2.3rem;
   margin-bottom: 5rem;
-  font-family: var(--helios); }
+  font-family: var(--montserrat); }
   @media only screen and (max-width: 767px) {
     .our-services__card-remark {
       font-size: 1.3rem;
