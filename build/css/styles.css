@@ -644,10 +644,10 @@ html {
           box-sizing: border-box;
   font-size: 10px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 9.6px; }
+  font-size: 10px; }
   @media only screen and (max-width: 1600px) {
     html {
-      font-size: 9px; } }
+      font-size: 10px; } }
   @media only screen and (max-width: 1400px) {
     html {
       font-size: 8px; } }
@@ -3228,8 +3228,7 @@ textarea.callback__form-input {
 .advantages__card-title {
   font-weight: bold;
   font-size: 2.2rem;
-  line-height: 2.6rem;
-  font-family: var(--montserrat); }
+  line-height: 2.6rem; }
   @media only screen and (max-width: 767px) {
     .advantages__card-title {
       font-size: 1.4rem;
@@ -5590,8 +5589,8 @@ textarea.callback__form-input {
           flex-basis: auto; } }
 
 .order-sro-license__right-col {
-  -ms-flex-preferred-size: 70.2rem;
-      flex-basis: 70.2rem;
+  -ms-flex-preferred-size: 75.2rem;
+      flex-basis: 75.2rem;
   -ms-flex-negative: 0;
       flex-shrink: 0; }
   @media only screen and (max-width: 767px) {
@@ -5861,7 +5860,7 @@ textarea.callback__form-input {
   position: absolute;
   right: 0.6rem;
   bottom: 0;
-  width: 46rem;
+  width: 52rem;
   height: auto;
   -o-object-fit: contain;
      object-fit: contain;
@@ -6932,8 +6931,7 @@ textarea.callback__form-input {
   font-weight: bold;
   font-size: 1.9rem;
   line-height: 2.3rem;
-  margin-bottom: 5rem;
-  font-family: var(--montserrat); }
+  margin-bottom: 5rem; }
   @media only screen and (max-width: 767px) {
     .our-services__card-remark {
       font-size: 1.3rem;

@@ -64,7 +64,7 @@
 }
 
 .order-sro-license__right-col {
-    flex-basis: 70.2rem;
+    flex-basis: 75.2rem;
     flex-shrink: 0;
     @include breakpoint(mobile) {
         flex-shrink: 1;
@@ -318,7 +318,7 @@
     position: absolute;
     right: 0.6rem;
     bottom: 0;
-    width: 46rem;
+    width: 52rem;
     height: auto;
     @include objectFitContainBottom();
 

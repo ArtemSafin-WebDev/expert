@@ -38,9 +38,9 @@ html {
     box-sizing: border-box;
     font-size: 10px;
     @include noHighlight();
-    font-size: 9.6px;
+    font-size: 10px;
     @include breakpoint(large-desktop) {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     @include breakpoint(desktop) {
