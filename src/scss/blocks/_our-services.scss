@@ -103,11 +103,14 @@
 }
 
 .our-services__card-remark {
-    font-weight: bold;
-    font-size: 1.9rem;
-    line-height: 2.3rem;
+   
     margin-bottom: 5rem;
-    // font-family: var(--montserrat);
+
+
+    font-weight: 900;
+    font-size: 1.8rem;
+    line-height: 2.2rem;
+   
     @include breakpoint(mobile) {
         font-size: 1.3rem;
         line-height: 1.6rem;

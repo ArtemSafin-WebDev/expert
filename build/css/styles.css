@@ -3228,8 +3228,8 @@ textarea.callback__form-input {
 
 .advantages__card-title {
   font-weight: 900;
-  font-size: 2.3rem;
-  line-height: 2.7rem; }
+  font-size: 1.8rem;
+  line-height: 2.2rem; }
   @media only screen and (max-width: 767px) {
     .advantages__card-title {
       font-size: 1.4rem;
@@ -6929,10 +6929,10 @@ textarea.callback__form-input {
       margin-bottom: .8rem; } }
 
 .our-services__card-remark {
-  font-weight: bold;
-  font-size: 1.9rem;
-  line-height: 2.3rem;
-  margin-bottom: 5rem; }
+  margin-bottom: 5rem;
+  font-weight: 900;
+  font-size: 1.8rem;
+  line-height: 2.2rem; }
   @media only screen and (max-width: 767px) {
     .our-services__card-remark {
       font-size: 1.3rem;
