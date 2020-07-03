@@ -39,6 +39,8 @@ html {
     font-size: 10px;
     @include noHighlight();
     font-size: 10px;
+  
+    -webkit-font-smoothing: none;
     @include breakpoint(large-desktop) {
         font-size: 10px;
     }
