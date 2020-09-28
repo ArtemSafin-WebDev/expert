@@ -644,8 +644,7 @@ html {
           box-sizing: border-box;
   font-size: 10px;
   -webkit-tap-highlight-color: transparent;
-  font-size: 10px;
-  -webkit-font-smoothing: none; }
+  font-size: 10px; }
   @media only screen and (max-width: 1600px) {
     html {
       font-size: 10px; } }
